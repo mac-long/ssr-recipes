@@ -68,6 +68,27 @@ export const getRecipeById = (id: number, locale: string) =>
 		.where("recipe_translation.language_code", "=", locale)
 		.executeTakeFirst();
 
+export const getLatestRecipes = (locale: string) =>
+	db
+		.selectFrom("recipe")
+		.innerJoin(
+			"recipe_translation",
+			"recipe_translation.recipe_id",
+			"recipe.id"
+		)
+		.select([
+			"recipe.id",
+			"recipe_translation.meal as meal",
+			"recipe_translation.cuisine as cuisine",
+			"recipe_translation.title as title",
+			"recipe_translation.summary as summary",
+			"recipe_translation.ingredients as ingredients",
+			"recipe.created_on"
+		])
+		.where("recipe_translation.language_code", "=", locale)
+		.limit(3)
+		.execute();
+
 export const getAllRecipes = (locale: string) =>
 	db
 		.selectFrom("recipe")

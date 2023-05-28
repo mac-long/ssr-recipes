@@ -1,7 +1,7 @@
-import { getAllFilters } from "@/lib/kysely";
+import { getAllFilters, getLatestRecipes } from "@/lib/kysely";
 
 export default async function Home() {
-	const recipe = await getAllFilters("de");
+	const recipe = await getLatestRecipes("de");
 	return (
 		<>
 			<h1>{JSON.stringify(recipe)}</h1>
