@@ -134,12 +134,6 @@ const getAllFilters = async (locale: string) => {
 		.where("recipe_translation.language_code", "=", locale)
 		.execute();
 
-	// TODO: Figure out types and ensure working.
-	// const newEmail = (data: any) => db.insertInto("recipient")..values(data).execute();
-
-	const getAllEmails = () =>
-		db.selectFrom("recipient").select("email").execute();
-
 	const meals: string[] = [];
 	const cuisines: string[] = [];
 
@@ -150,6 +144,11 @@ const getAllFilters = async (locale: string) => {
 
 	return { meals, cuisines };
 };
+
+// TODO: Figure out types and ensure working.
+// const newEmail = (data: any) => db.insertInto("recipient")..values(data).execute();
+
+const getAllEmails = () => db.selectFrom("recipient").select("email").execute();
 
 export {
 	sql,
