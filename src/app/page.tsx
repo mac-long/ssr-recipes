@@ -1,11 +1,11 @@
-import { allRecipes } from "@/lib/kysely";
+import { getRecipeById } from "@/lib/kysely";
 
 export default async function Home() {
-	const recipes = await allRecipes();
+	console.log("🚀 ~ file: page.tsx:5 ~ Home ~ recipes:", recipe);
 
 	return (
 		<>
-			<h1>{recipes[0].title}</h1>
+			<h1>{`test${JSON.stringify(recipe)} `}</h1>
 		</>
 	);
 }

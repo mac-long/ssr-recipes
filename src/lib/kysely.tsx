@@ -5,13 +5,13 @@ interface RecipientTable {
 	id: Generated<number>;
 	name: string;
 	email: string;
-	emailVerified: true;
-	createdOn: ColumnType<Date, string | undefined, never>;
+	email_verified: true;
+	created_on: ColumnType<Date, string | undefined, never>;
 }
 
 interface RecipeTable {
 	id: Generated<number>;
-	creationTime: number;
+	creation_time: number;
 	image: {
 		url: string;
 		photographer?: {
@@ -19,32 +19,43 @@ interface RecipeTable {
 			url: string;
 		};
 	};
-	createdOn: ColumnType<Date, string | undefined, never>;
+	created_on: ColumnType<Date, string | undefined, never>;
 }
 
 interface RecipeTranslationTable {
 	id: Generated<number>;
-	recipeId: string;
-	languageCode: string;
+	recipe_id: number;
+	language_code: string;
 	title: string;
 	summary: string;
 	meal: string;
 	cuisine: string;
 	ingredients: string[];
 	instructions: string[];
-	createdOn: ColumnType<Date, string | undefined, never>;
+	created_on: ColumnType<Date, string | undefined, never>;
 }
 
-interface Database {
+export interface Database {
 	recipient: RecipientTable;
 	recipe: RecipeTable;
-	recipeTranslation: RecipeTranslationTable;
+	recipe_translation: RecipeTranslationTable;
 }
 
 const db = createKysely<Database>();
 
-export const allRecipes = db
-	.selectFrom("recipe")
-	.innerJoin("recipeTranslation", "recipeTranslation.recipeId", "recipe.id")
-	.select(["id", "title"])
-	.execute();
+export const getRecipeById = (id: number, locale: string) =>
+	db
+		.selectFrom("recipe")
+		.innerJoin(
+			"recipe_translation",
+			"recipe_translation.recipe_id",
+			"recipe.id"
+		)
+		.select([
+			"recipe.id",
+			"recipe_translation.title as title",
+			"recipe_translation.summary as summary"
+		])
+		.where("recipe.id", "=", id)
+		.where("recipe_translation.language_code", "=", locale)
+		.executeTakeFirst();
