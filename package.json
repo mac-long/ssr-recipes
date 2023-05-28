@@ -12,6 +12,7 @@
 		"@vercel/postgres-kysely": "^0.3.0",
 		"kysely": "^0.25.0",
 		"next": "13.4.4",
+		"openai": "^3.2.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0"
 	},

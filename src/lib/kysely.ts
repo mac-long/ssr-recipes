@@ -43,6 +43,9 @@ export interface Database {
 const db = createKysely<Database>();
 const { countAll } = db.fn;
 
+// TODO: Figure out what type this is and make sure data is being split correctly
+// const newRecipe = (data: any) => await db.insertInto("recipes").values(data).execute()
+
 const getRecipeCount = () =>
 	db.selectFrom("recipe").select(countAll().as("num_recipes")).execute();
 
@@ -89,6 +92,20 @@ const getLatestRecipes = (locale: string) =>
 		.limit(3)
 		.execute();
 
+// TODO: Make sure this is working properly
+const getRecipesByMeal = (meal: string) =>
+	db
+		.selectFrom("recipe")
+		.innerJoin(
+			"recipe_translation",
+			"recipe_translation.recipe_id",
+			"recipe.id"
+		)
+		.selectAll()
+		.where("meal", "=", meal)
+		.orderBy("created_on")
+		.execute();
+
 const getAllRecipes = (locale: string) =>
 	db
 		.selectFrom("recipe")
@@ -117,6 +134,12 @@ const getAllFilters = async (locale: string) => {
 		.where("recipe_translation.language_code", "=", locale)
 		.execute();
 
+	// TODO: Figure out types and ensure working.
+	// const newEmail = (data: any) => db.insertInto("recipient")..values(data).execute();
+
+	const getAllEmails = () =>
+		db.selectFrom("recipient").select("email").execute();
+
 	const meals: string[] = [];
 	const cuisines: string[] = [];
 
@@ -135,5 +158,6 @@ export {
 	getRecipeById,
 	getLatestRecipes,
 	getAllRecipes,
-	getAllFilters
+	getAllFilters,
+	getAllEmails
 };
