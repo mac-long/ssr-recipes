@@ -1,5 +1,6 @@
 import { createKysely } from "@vercel/postgres-kysely";
 import { ColumnType, Generated } from "kysely";
+import { sql } from "kysely";
 
 interface RecipientTable {
 	id: Generated<number>;
@@ -40,6 +41,10 @@ export interface Database {
 }
 
 const db = createKysely<Database>();
+const { countAll } = db.fn;
+
+export const getRecipeCount = () =>
+	db.selectFrom("recipe").select(countAll().as("num_recipes")).execute();
 
 export const getRecipeById = (id: number, locale: string) =>
 	db
@@ -82,3 +87,22 @@ export const getAllRecipes = (locale: string) =>
 		])
 		.where("recipe_translation.language_code", "=", locale)
 		.execute();
+
+export const getAllFilters = async (locale: string) => {
+	const res = await db
+		.selectFrom("recipe_translation")
+		.select(["cuisine", "meal"])
+		.distinct()
+		.where("recipe_translation.language_code", "=", locale)
+		.execute();
+
+	const meals: string[] = [];
+	const cuisines: string[] = [];
+
+	res.forEach((row) => {
+		meals.push(row.meal);
+		cuisines.push(row.cuisine);
+	});
+
+	return { meals, cuisines };
+};
