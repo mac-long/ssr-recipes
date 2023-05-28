@@ -43,10 +43,10 @@ export interface Database {
 const db = createKysely<Database>();
 const { countAll } = db.fn;
 
-export const getRecipeCount = () =>
+const getRecipeCount = () =>
 	db.selectFrom("recipe").select(countAll().as("num_recipes")).execute();
 
-export const getRecipeById = (id: number, locale: string) =>
+const getRecipeById = (id: number, locale: string) =>
 	db
 		.selectFrom("recipe")
 		.innerJoin(
@@ -68,7 +68,7 @@ export const getRecipeById = (id: number, locale: string) =>
 		.where("recipe_translation.language_code", "=", locale)
 		.executeTakeFirst();
 
-export const getLatestRecipes = (locale: string) =>
+const getLatestRecipes = (locale: string) =>
 	db
 		.selectFrom("recipe")
 		.innerJoin(
@@ -89,7 +89,7 @@ export const getLatestRecipes = (locale: string) =>
 		.limit(3)
 		.execute();
 
-export const getAllRecipes = (locale: string) =>
+const getAllRecipes = (locale: string) =>
 	db
 		.selectFrom("recipe")
 		.innerJoin(
@@ -109,7 +109,7 @@ export const getAllRecipes = (locale: string) =>
 		.where("recipe_translation.language_code", "=", locale)
 		.execute();
 
-export const getAllFilters = async (locale: string) => {
+const getAllFilters = async (locale: string) => {
 	const res = await db
 		.selectFrom("recipe_translation")
 		.select(["cuisine", "meal"])
@@ -126,4 +126,14 @@ export const getAllFilters = async (locale: string) => {
 	});
 
 	return { meals, cuisines };
+};
+
+export {
+	sql,
+	db,
+	getRecipeCount,
+	getRecipeById,
+	getLatestRecipes,
+	getAllRecipes,
+	getAllFilters
 };
