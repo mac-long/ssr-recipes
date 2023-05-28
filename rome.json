@@ -1,0 +1,13 @@
+{
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	}
+}
+
+// psql: Newsletter, Users, Recipes
