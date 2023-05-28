@@ -14,6 +14,7 @@
 
 
 
+
 ## Schema
 
 ### Newsletter Recipients
