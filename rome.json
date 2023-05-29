@@ -21,5 +21,8 @@
 	"vcs": {
 		"clientKind": "git",
 		"useIgnoreFile": true
+	},
+	"files": {
+		"ignore": [".next"]
 	}
 }
