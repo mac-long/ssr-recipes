@@ -1,12 +1,27 @@
 import { createKysely } from "@vercel/postgres-kysely";
-import { ColumnType, Generated } from "kysely";
+import { Generated } from "kysely";
 import { sql } from "kysely";
+
+export {
+	sql,
+	db,
+	newRecipe,
+	getRecipeCount,
+	getRecipeFilters,
+	getRecipeById,
+	getAllRecipes,
+	getLatestRecipes,
+	getRecipesByMeal,
+	newEmailRecipient,
+	getAllEmailRecipients,
+	deleteEmailRecipient
+};
 
 interface RecipientTable {
 	id: Generated<number>;
 	name: string;
 	email: string;
-	email_verified: true;
+	email_verified: boolean;
 }
 
 interface RecipeTable {
@@ -19,7 +34,7 @@ interface RecipeTable {
 			url: string;
 		};
 	};
-	created_on: ColumnType<Date, string | undefined, never>;
+	created_on: Generated<Date>;
 }
 
 interface RecipeTranslationTable {
@@ -43,11 +58,54 @@ export interface Database {
 const db = createKysely<Database>();
 const { countAll } = db.fn;
 
-// TODO: Figure out what type this is and make sure data is being split correctly
-// const newRecipe = (data: any) => await db.insertInto("recipes").values(data).execute()
+const newRecipe = async (
+	recipe: Omit<RecipeTable, "id" | "created_on">,
+	translations: Omit<RecipeTranslationTable, "id" | "recipe_id">[]
+) => {
+	try {
+		const { id } = await db
+			.insertInto("recipe")
+			.values(recipe)
+			.returning("id")
+			.executeTakeFirst();
+
+		return;
+
+		// const translationInsertions = translations.map((translation) => ({
+		// 	...translation,
+		// 	recipe_id: recipe_id
+		// }));
+
+		// await db
+		// 	.insertInto("recipe_translation")
+		// 	.values(translationInsertions)
+		// 	.executeTakeFirst();
+	} catch (error) {
+		console.error(error);
+	}
+};
 
 const getRecipeCount = () =>
 	db.selectFrom("recipe").select(countAll().as("num_recipes")).execute();
+
+const getRecipeFilters = async (locale: string) => {
+	const res = await db
+		.selectFrom("recipe_translation")
+		.select(["cuisine", "meal"])
+		.distinct()
+		.where("recipe_translation.language_code", "=", locale)
+		.execute();
+
+	const meals: string[] = [];
+	const cuisines: string[] = [];
+
+	res.forEach((row) => {
+		meals.push(row.meal);
+		cuisines.push(row.cuisine);
+	});
+
+	return { meals, cuisines };
+};
 
 const getRecipeById = (id: number, locale: string) =>
 	db
@@ -92,7 +150,6 @@ const getLatestRecipes = (locale: string) =>
 		.limit(3)
 		.execute();
 
-// TODO: Make sure this is working properly
 const getRecipesByMeal = (meal: string) =>
 	db
 		.selectFrom("recipe")
@@ -121,42 +178,22 @@ const getAllRecipes = (locale: string) =>
 			"recipe_translation.title as title",
 			"recipe_translation.summary as summary",
 			"recipe_translation.ingredients as ingredients",
+			"recipe_translation.instructions as instructions",
 			"recipe.created_on"
 		])
 		.where("recipe_translation.language_code", "=", locale)
 		.execute();
 
-const getAllFilters = async (locale: string) => {
-	const res = await db
-		.selectFrom("recipe_translation")
-		.select(["cuisine", "meal"])
-		.distinct()
-		.where("recipe_translation.language_code", "=", locale)
-		.execute();
-
-	const meals: string[] = [];
-	const cuisines: string[] = [];
-
-	res.forEach((row) => {
-		meals.push(row.meal);
-		cuisines.push(row.cuisine);
-	});
-
-	return { meals, cuisines };
+const newEmailRecipient = async (data) => {
+	try {
+		db.insertInto("recipient").values(data).executeTakeFirst();
+	} catch (error) {
+		throw new Error(error);
+	}
 };
 
-// TODO: Figure out types and ensure working.
-// const newEmail = (data: any) => db.insertInto("recipient")..values(data).execute();
+const getAllEmailRecipients = () =>
+	db.selectFrom("recipient").select(["name", "email"]).execute();
 
-const getAllEmails = () => db.selectFrom("recipient").select("email").execute();
-
-export {
-	sql,
-	db,
-	getRecipeCount,
-	getRecipeById,
-	getLatestRecipes,
-	getAllRecipes,
-	getAllFilters,
-	getAllEmails
-};
+const deleteEmailRecipient = (id: number) =>
+	db.deleteFrom("recipient").where("id", "=", id);

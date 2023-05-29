@@ -9,6 +9,7 @@
 		"format": "rome format --write ."
 	},
 	"dependencies": {
+		"@vercel/postgres": "^0.3.0",
 		"@vercel/postgres-kysely": "^0.3.0",
 		"kysely": "^0.25.0",
 		"next": "13.4.4",
@@ -17,6 +18,7 @@
 		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
+		"@babel/preset-typescript": "^7.21.5",
 		"@tailwindcss/typography": "0.5.9",
 		"@types/node": "20.2.5",
 		"@types/react": "18.2.7",
