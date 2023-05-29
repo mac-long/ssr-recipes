@@ -1,9 +1,6 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  '@vercel/postgres':
-    specifier: ^0.3.0
-    version: 0.3.0
   '@vercel/postgres-kysely':
     specifier: ^0.3.0
     version: 0.3.0(kysely@0.25.0)

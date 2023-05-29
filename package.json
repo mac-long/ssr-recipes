@@ -1,7 +1,6 @@
 {
 	"name": "recipes",
 	"version": "0.1.0",
-	"private": true,
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -9,7 +8,6 @@
 		"format": "rome format --write ."
 	},
 	"dependencies": {
-		"@vercel/postgres": "^0.3.0",
 		"@vercel/postgres-kysely": "^0.3.0",
 		"kysely": "^0.25.0",
 		"next": "13.4.4",
