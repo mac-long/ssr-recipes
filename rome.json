@@ -1,28 +1,7 @@
 {
-	"$schema": "./node_modules/rome/configuration_schema.json",
-	"formatter": {
-		"enabled": true,
-		"indentSize": 2
-	},
-	"javascript": {
-		"formatter": {
-			"trailingComma": "none"
-		}
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true
-		}
-	},
-	"organizeImports": {
-		"enabled": true
-	},
 	"vcs": {
+		"enabled": true,
 		"clientKind": "git",
 		"useIgnoreFile": true
-	},
-	"files": {
-		"ignore": [".next"]
 	}
 }
