@@ -1,6 +1,7 @@
 import { createKysely } from "@vercel/postgres-kysely";
 import { Generated } from "kysely";
 import { sql } from "kysely";
+import test from "node:test";
 
 export {
 	sql,
@@ -63,13 +64,13 @@ const newRecipe = async (
 	translations: Omit<RecipeTranslationTable, "id" | "recipe_id">[]
 ) => {
 	try {
-		const { id } = await db
+		const test = await db
 			.insertInto("recipe")
 			.values(recipe)
 			.returning("id")
 			.executeTakeFirst();
 
-		return;
+		return test;
 
 		// const translationInsertions = translations.map((translation) => ({
 		// 	...translation,
