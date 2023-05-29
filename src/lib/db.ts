@@ -1,11 +1,7 @@
-import { createKysely } from "@vercel/postgres-kysely";
 import { Generated } from "kysely";
-import { sql } from "kysely";
-import test from "node:test";
+import { createKysely } from "@vercel/postgres-kysely";
 
 export {
-	sql,
-	db,
 	newRecipe,
 	getRecipeCount,
 	getRecipeFilters,
@@ -15,7 +11,7 @@ export {
 	getRecipesByMeal,
 	newEmailRecipient,
 	getAllEmailRecipients,
-	deleteEmailRecipient
+	deleteEmailRecipient,
 };
 
 interface RecipientTable {
@@ -61,26 +57,25 @@ const { countAll } = db.fn;
 
 const newRecipe = async (
 	recipe: Omit<RecipeTable, "id" | "created_on">,
-	translations: Omit<RecipeTranslationTable, "id" | "recipe_id">[]
+	translations: Omit<RecipeTranslationTable, "id" | "recipe_id">[],
 ) => {
 	try {
-		const test = await db
-			.insertInto("recipe")
-			.values(recipe)
-			.returning("id")
-			.executeTakeFirst();
+		const { id } =
+			(await db
+				.insertInto("recipe")
+				.values(recipe)
+				.returning("id")
+				.executeTakeFirst()) ?? {};
 
-		return test;
-
-		// const translationInsertions = translations.map((translation) => ({
-		// 	...translation,
-		// 	recipe_id: recipe_id
-		// }));
-
-		// await db
-		// 	.insertInto("recipe_translation")
-		// 	.values(translationInsertions)
-		// 	.executeTakeFirst();
+		await db
+			.insertInto("recipe_translation")
+			.values(
+				translations.map((translation) => ({
+					...translation,
+					recipe_id: id as number,
+				})),
+			)
+			.execute();
 	} catch (error) {
 		console.error(error);
 	}
@@ -114,7 +109,7 @@ const getRecipeById = (id: number, locale: string) =>
 		.innerJoin(
 			"recipe_translation",
 			"recipe_translation.recipe_id",
-			"recipe.id"
+			"recipe.id",
 		)
 		.select([
 			"id",
@@ -124,7 +119,7 @@ const getRecipeById = (id: number, locale: string) =>
 			"recipe_translation.ingredients as ingredients",
 			"creation_time",
 			"recipe_translation.instructions as instructions",
-			"image"
+			"image",
 		])
 		.where("recipe.id", "=", id)
 		.where("recipe_translation.language_code", "=", locale)
@@ -136,7 +131,7 @@ const getLatestRecipes = (locale: string) =>
 		.innerJoin(
 			"recipe_translation",
 			"recipe_translation.recipe_id",
-			"recipe.id"
+			"recipe.id",
 		)
 		.select([
 			"recipe.id",
@@ -145,7 +140,7 @@ const getLatestRecipes = (locale: string) =>
 			"recipe_translation.title as title",
 			"recipe_translation.summary as summary",
 			"recipe_translation.ingredients as ingredients",
-			"recipe.created_on"
+			"recipe.created_on",
 		])
 		.where("recipe_translation.language_code", "=", locale)
 		.limit(3)
@@ -157,7 +152,7 @@ const getRecipesByMeal = (meal: string) =>
 		.innerJoin(
 			"recipe_translation",
 			"recipe_translation.recipe_id",
-			"recipe.id"
+			"recipe.id",
 		)
 		.selectAll()
 		.where("meal", "=", meal)
@@ -170,7 +165,7 @@ const getAllRecipes = (locale: string) =>
 		.innerJoin(
 			"recipe_translation",
 			"recipe_translation.recipe_id",
-			"recipe.id"
+			"recipe.id",
 		)
 		.select([
 			"recipe.id",
@@ -180,20 +175,22 @@ const getAllRecipes = (locale: string) =>
 			"recipe_translation.summary as summary",
 			"recipe_translation.ingredients as ingredients",
 			"recipe_translation.instructions as instructions",
-			"recipe.created_on"
+			"recipe.created_on",
 		])
 		.where("recipe_translation.language_code", "=", locale)
 		.execute();
 
-const newEmailRecipient = async (data) => {
+const newEmailRecipient = async (
+	recipient: Omit<RecipientTable, "id" | "created_on" | "email_verified">,
+) => {
 	try {
-		db.insertInto("recipient").values(data).executeTakeFirst();
+		db.insertInto("recipient").values(recipient).executeTakeFirst();
 	} catch (error) {
-		throw new Error(error);
+		console.error(error);
 	}
 };
 
-const getAllEmailRecipients = () =>
+const getAllEmailRecipients = (data: any) =>
 	db.selectFrom("recipient").select(["name", "email"]).execute();
 
 const deleteEmailRecipient = (id: number) =>
