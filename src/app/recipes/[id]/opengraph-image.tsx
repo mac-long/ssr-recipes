@@ -1,10 +1,10 @@
-import { getRecipeById } from "@/lib/kysely";
+import { getRecipeById } from "@/lib/db";
 import { ImageResponse } from "next/server";
 
 export const alt = "Awesome Recipe";
 export const size = {
 	width: 1200,
-	height: 630
+	height: 630,
 };
 
 export const contentType = "image/png";
@@ -25,7 +25,7 @@ export default async function Image({ params }: { params: { id: number } }) {
 				fontSize: 60,
 				letterSpacing: -2,
 				fontWeight: 700,
-				textAlign: "center"
+				textAlign: "center",
 			}}
 		>
 			<svg
@@ -53,12 +53,12 @@ export default async function Image({ params }: { params: { id: number } }) {
 					backgroundImage:
 						"linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216))",
 					backgroundClip: "text",
-					color: "transparent"
+					color: "transparent",
 				}}
 			>
 				{recipe?.title}
 			</div>
 			<p style={{ fontSize: 26 }}>{recipe?.summary}</p>
-		</div>
+		</div>,
 	);
 }
