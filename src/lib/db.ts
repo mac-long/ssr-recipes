@@ -1,5 +1,5 @@
-import { Generated } from "kysely";
 import { createKysely } from "@vercel/postgres-kysely";
+import { Generated } from "kysely";
 
 export {
 	newRecipe,
@@ -18,7 +18,7 @@ interface RecipientTable {
 	id: Generated<number>;
 	name: string;
 	email: string;
-	email_verified: boolean;
+	email_verified?: boolean;
 }
 
 interface RecipeTable {
@@ -190,7 +190,7 @@ const newEmailRecipient = async (
 	}
 };
 
-const getAllEmailRecipients = (data: any) =>
+const getAllEmailRecipients = () =>
 	db.selectFrom("recipient").select(["name", "email"]).execute();
 
 const deleteEmailRecipient = (id: number) =>
