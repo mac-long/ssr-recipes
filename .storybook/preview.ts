@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import '../src/app/global.css';
+import "../src/app/global.css";
 
 const preview: Preview = {
 	parameters: {
@@ -11,8 +11,13 @@ const preview: Preview = {
 			},
 		},
 		storySort: {
-			order: ["Documentation", ["Introductions", "Todo"], 'Components', 'Pages']
-		}
+			order: [
+				"Documentation",
+				["Introductions", "Todo"],
+				"Components",
+				"Pages",
+			],
+		},
 	},
 };
 
