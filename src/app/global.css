@@ -29,7 +29,7 @@
       @apply hover:dark:bg-teal-700;
     }
 
-    svg {
+    .icon {
       @apply w-5 h-5;
     }
   }

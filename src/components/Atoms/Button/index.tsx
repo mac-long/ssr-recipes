@@ -5,6 +5,7 @@ import Spinner from "../Spinner";
 interface Props {
 	type?: ButtonHTMLAttributes<string>["type"];
 	href?: HTMLProps<HTMLAnchorElement>["href"];
+	newTab?: boolean;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	label?: string;
 	icon?: ReactNode;
@@ -19,6 +20,7 @@ interface Props {
 export default function Button({
 	type,
 	href,
+	newTab,
 	onClick,
 	label,
 	icon,
@@ -36,18 +38,24 @@ export default function Button({
 			disabled={disabled}
 			className={`
 				${primary && "primary"}
-				${reverse && "flex-row-reverse space-x-reverse"}
-				${fullWidth && "w-full justify-center space-x-0"}
+				${reverse && !href && "flex-row-reverse space-x-reverse"}
+				${fullWidth && "w-full justify-center space-x-0.5"}
+				${href && "justify-center"}
 			`}
 		>
-			{icon && <span>{icon}</span>}
+			{icon && !href && <span className="icon">{icon}</span>}
 			{loading && <Spinner color={spinnerColor} />}
-			{label && <span>{label}</span>}
+			{label && !href && <span>{label}</span>}
 		</button>
 	);
 
 	return href ? (
-		<Link href={href} passHref>
+		<Link
+			href={href}
+			passHref
+			target={newTab ? "_blank" : "_self"}
+			rel={newTab ? "noreferrer" : ""}
+		>
 			{button}
 		</Link>
 	) : (
