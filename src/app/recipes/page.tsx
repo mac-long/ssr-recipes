@@ -1,9 +1,7 @@
-import Link from "next/link";
-
-export default async function Home() {
+export default async function Recipes() {
 	return (
 		<>
-			<h1>About</h1>
+			<h1>Recipes</h1>
 		</>
 	);
 }
