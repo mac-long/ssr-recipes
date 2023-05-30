@@ -1,9 +1,16 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, ReactNode } from "react";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-	test: boolean;
+	icon: ReactNode;
 }
 
-export default function Input({ test, ...rest }: Props) {
-	return <input {...rest} />;
+export default function Input({ icon, ...rest }: Props) {
+	return (
+		<>
+			<label htmlFor={rest.name} className="sr-only">
+				{rest.name}
+			</label>
+			<input {...rest} />
+		</>
+	);
 }
