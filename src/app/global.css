@@ -6,13 +6,14 @@
   html {
     @apply bg-slate-100 text-slate-900;
     @apply dark:bg-slate-900 dark:text-slate-900;
+
   }
 
   main {
     @apply prose;
   }
 
-  button {
+  button, [type='button'], [type='submit'], [type='reset'] {
     @apply flex items-center space-x-2;
     @apply rounded-md font-bold bg-slate-900 text-slate-100;
     @apply transition-colors duration-300;
@@ -26,6 +27,10 @@
       @apply hover:bg-teal-800;
       @apply dark:bg-teal-800 text-slate-100;
       @apply hover:dark:bg-teal-700;
+    }
+
+    svg {
+      @apply w-5 h-5;
     }
   }
 }

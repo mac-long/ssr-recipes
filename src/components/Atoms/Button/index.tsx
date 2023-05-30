@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ButtonHTMLAttributes, HTMLProps, SVGProps } from "react";
+import { ButtonHTMLAttributes, HTMLProps, ReactNode } from "react";
 import Spinner from "../Spinner";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 	href?: HTMLProps<HTMLAnchorElement>["href"];
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	label?: string;
-	icon?: SVGProps<SVGSVGElement>;
+	icon?: ReactNode;
 	primary?: boolean;
 	reverse?: boolean;
 	loading?: boolean;
@@ -36,12 +36,12 @@ export default function Button({
 			disabled={disabled}
 			className={`
 				${primary && "primary"}
-				${reverse && "flex-row-reverse"}
-				${fullWidth && "w-full"}
+				${reverse && "flex-row-reverse space-x-reverse"}
+				${fullWidth && "w-full justify-center space-x-0"}
 			`}
 		>
+			{icon && <span>{icon}</span>}
 			{loading && <Spinner color={spinnerColor} />}
-			{icon && <span className="w-5 h-5">icon</span>}
 			{label && <span>{label}</span>}
 		</button>
 	);
