@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./index";
 
-const meta: Meta<typeof Button> = {
-	title: "Atoms/Button",
+export default {
+	title: "Components/Atoms/Button",
 	component: Button,
-};
+} as Meta<typeof Button>;
 
-export default meta;
 type Story = StoryObj<typeof Button>;
+
+export const Default: Story = {
+	render: () => <Button label="Button" />,
+};
 
 export const Primary: Story = {
 	render: () => <Button primary label="Button" />,
-};
-
-export const Secondary: Story = {
-	render: () => <Button label="Button" />,
 };
 
 // export const Icon: Story = {
@@ -30,7 +29,11 @@ export const Secondary: Story = {
 // }
 
 // export const LoadingOnly: Story = {
+// render:
+// }
 
+// export const LoadingRight: Story = {
+//	render:
 // }
 
 // export const Submit: Story = {
