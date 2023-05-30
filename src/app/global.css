@@ -38,6 +38,7 @@
 @layer components {
   .spinner {
     @apply inline-block w-5 h-5;
+    @apply text-current;
     @apply border-4 rounded-full border-current border-solid border-r-transparent;
     @apply animate-spin motion-reduce:animate-[spin_1.5s_linear_infinite];
   }
