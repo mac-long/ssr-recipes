@@ -1,3 +1,7 @@
+import {Meta} from '@storybook/blocks';
+
+<Meta title="Documentation/Introduction" />
+
 # Super Simple Recipes
 
 SSR is a **Super Simple Recipe** blog that utilizes ChatGPT to generate recipes and skips the 4-page story before getting to the instructions. Try making some of these crazy good meals.
@@ -48,6 +52,7 @@ I chose to create an atomic design system, starting from the tiniest of componen
 - Chromatic allows for automated snapshot testing which saves developers a whole bunch of time manually opening the application in their browser window, instead they can just check the chromatic url sent to their email or Slack channel and view it like a regular PR.
 - Running tests in GitHub Actions ensures all code is ready to be merged before allowing the main branch to be affected.
 - Rome for Linting and Formatting... This one was a surprise, minimal configuration due to sane defaults, it's also super quick because it's built with rust! This tool runs lint checks on average at `1.236s` and formatting at a ridiculously quick `0.5s`. You can run these tests with the tiny shell script below.
+  - One negative aspect of this is the fact that it's a rather new tool, so certain luxuries I've gotten used to with ESLint and Prettier such as automatic Tailwind Class sorting are duly missed. However the development team have mentions these are likely additions for the future.
 
 ``` zsh
 for i in `seq 1 5`
