@@ -15,7 +15,7 @@ export default {
 
 type Story = StoryObj<typeof Input>;
 
-export const Default = {};
+export const Default: Story = {};
 
 export const WithIcon = {
 	icon: <UserIcon />,

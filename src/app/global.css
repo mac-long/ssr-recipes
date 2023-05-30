@@ -13,6 +13,11 @@
     @apply prose;
   }
 
+  a {
+    @apply text-inherit no-underline transition-colors duration-300;
+    @apply hover:text-teal-600;
+  }
+
   button, [type='button'], [type='submit'], [type='reset'] {
     @apply flex items-center space-x-2;
     @apply shadow-sm rounded-md text-sm font-semibold bg-slate-900 text-slate-100;
