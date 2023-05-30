@@ -10,7 +10,10 @@ export default function Input({ icon, ...rest }: Props) {
 			<label htmlFor={rest.name} className="sr-only">
 				{rest.name}
 			</label>
-			<input {...rest} />
+			<div className="input-container">
+				<span className="icon">{icon}</span>
+				<input {...rest} />
+			</div>
 		</>
 	);
 }

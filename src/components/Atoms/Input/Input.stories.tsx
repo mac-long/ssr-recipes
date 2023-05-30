@@ -20,4 +20,3 @@ export const Default = {};
 export const WithIcon = {
 	icon: <UserIcon />,
 };
-// export const Clear = {};

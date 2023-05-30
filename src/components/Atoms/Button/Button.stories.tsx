@@ -1,5 +1,6 @@
 import {
 	AcademicCapIcon,
+	ArrowLongRightIcon,
 	CogIcon,
 	FireIcon,
 } from "@heroicons/react/24/outline";
@@ -11,7 +12,7 @@ export default {
 	component: Button,
 	tags: ["autodocs"],
 	args: {
-		label: "Button",
+		label: "Get Cooking",
 		onClick: () => console.log("test"),
 	},
 } as Meta<typeof Button>;
@@ -54,6 +55,7 @@ export const LoadingColored: Story = {
 
 export const LoadingOnly: Story = {
 	args: {
+		label: undefined,
 		loading: true,
 	},
 };
@@ -72,6 +74,20 @@ export const Submit: Story = {
 	},
 };
 
+export const Ghost: Story = {
+	args: {
+		ghost: true,
+	},
+};
+
+export const GhostWithIcon = {
+	args: {
+		ghost: true,
+		reverse: true,
+		icon: <ArrowLongRightIcon />,
+	},
+};
+
 export const FullWidth: Story = {
 	args: {
 		fullWidth: true,
@@ -82,5 +98,13 @@ export const FullWidthIcon: Story = {
 	args: {
 		fullWidth: true,
 		icon: <CogIcon />,
+	},
+};
+
+export const FullWidthLoading: Story = {
+	args: {
+		label: undefined,
+		fullWidth: true,
+		loading: true,
 	},
 };

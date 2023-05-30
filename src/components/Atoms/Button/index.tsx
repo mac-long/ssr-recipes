@@ -10,6 +10,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	label?: string;
 	icon?: ReactNode;
 	primary?: boolean;
+	ghost?: boolean;
 	reverse?: boolean;
 	loading?: boolean;
 	spinnerColor?: string;
@@ -23,6 +24,7 @@ export default function Button({
 	label,
 	icon,
 	primary,
+	ghost,
 	reverse,
 	loading,
 	spinnerColor,
@@ -37,6 +39,7 @@ export default function Button({
 				reverse && !href && "flex-row-reverse space-x-reverse",
 				fullWidth && "w-full justify-center space-x-0.5",
 				href && "justify-center",
+				ghost && "ghost",
 			)}
 			{...rest}
 		>

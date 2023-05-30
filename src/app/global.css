@@ -15,9 +15,9 @@
 
   button, [type='button'], [type='submit'], [type='reset'] {
     @apply flex items-center space-x-2;
-    @apply rounded-md font-bold bg-slate-900 text-slate-100;
+    @apply shadow-sm rounded-md text-sm font-semibold bg-slate-900 text-slate-100;
     @apply transition-colors duration-300;
-    @apply px-4 py-2;
+    @apply px-3.5 py-2;
     @apply hover:bg-slate-700;
     @apply dark:bg-slate-100 dark:text-gray-900;
     @apply hover:dark:bg-slate-300;
@@ -29,8 +29,10 @@
       @apply hover:dark:bg-teal-700;
     }
 
-    .icon {
-      @apply w-5 h-5;
+    &.ghost {
+      @apply text-gray-900 bg-transparent shadow-none;
+      @apply dark:text-slate-100;
+      @apply hover:bg-transparent hover:text-teal-600;
     }
   }
 
@@ -41,9 +43,14 @@
     @apply transition-colors duration-300;
     @apply focus:border-teal-600 focus:border-2;
   }
+
 }
 
 @layer components {
+  .icon, .icon svg {
+    @apply w-5 h-5;
+  }
+
   .spinner {
     @apply inline-block w-5 h-5;
     @apply text-current;
