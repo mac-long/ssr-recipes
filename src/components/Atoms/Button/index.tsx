@@ -34,7 +34,7 @@ export default function Button({
 			type={type}
 			onClick={onClick}
 			disabled={disabled}
-			className={`flex items-center space-x-2 bg-slate-500
+			className={`
 				${primary && "bg-teal-600"}
 				${reverse && "flex-row-reverse"}
 				${fullWidth && "w-full"}
