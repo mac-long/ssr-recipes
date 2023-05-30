@@ -78,12 +78,6 @@ devDependencies:
   '@types/react-dom':
     specifier: 18.2.4
     version: 18.2.4
-  addon-chromatic:
-    specifier: link:@storybook/addon-chromatic,
-    version: link:@storybook/addon-chromatic,
-  addon-links:
-    specifier: link:@storybook/addon-links,
-    version: link:@storybook/addon-links,
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.24)

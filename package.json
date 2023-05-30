@@ -37,8 +37,6 @@
 		"@types/node": "20.2.5",
 		"@types/react": "18.2.7",
 		"@types/react-dom": "18.2.4",
-		"addon-chromatic": "link:@storybook/addon-chromatic,",
-		"addon-links": "link:@storybook/addon-links,",
 		"autoprefixer": "10.4.14",
 		"husky": "^8.0.0",
 		"postcss": "8.4.24",
