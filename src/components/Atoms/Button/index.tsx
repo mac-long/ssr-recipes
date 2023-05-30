@@ -35,7 +35,7 @@ export default function Button({
 			onClick={onClick}
 			disabled={disabled}
 			className={`
-				${primary && "bg-teal-600"}
+				${primary && "primary"}
 				${reverse && "flex-row-reverse"}
 				${fullWidth && "w-full"}
 			`}
