@@ -9,9 +9,10 @@ import Button from "./index";
 export default {
 	title: "Components/Atoms/Button",
 	component: Button,
+	tags: ["autodocs"],
 	args: {
 		label: "Button",
-		type: "button",
+		onClick: () => console.log("test"),
 	},
 } as Meta<typeof Button>;
 
