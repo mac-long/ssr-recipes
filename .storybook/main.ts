@@ -8,7 +8,6 @@ const config: StorybookConfig = {
 		"@storybook/addon-interactions",
 		"@storybook/addon-links",
 		"@storybook/addon-storysource",
-		"@storbook/addon-docs",
 		"@storybook/test-runner",
 		"storybook-mobile",
 		{

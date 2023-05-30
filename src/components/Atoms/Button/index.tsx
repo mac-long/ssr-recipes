@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Link from "next/link";
 import { ButtonHTMLAttributes, HTMLProps, ReactNode } from "react";
 import Spinner from "../Spinner";
@@ -31,12 +32,12 @@ export default function Button({
 	const button = (
 		<button
 			type={type}
-			className={`
-		${primary && "primary"}
-		${reverse && !href && "flex-row-reverse space-x-reverse"}
-		${fullWidth && "w-full justify-center space-x-0.5"}
-		${href && "justify-center"}
-		`}
+			className={classNames(
+				primary && "primary",
+				reverse && !href && "flex-row-reverse space-x-reverse",
+				fullWidth && "w-full justify-center space-x-0.5",
+				href && "justify-center",
+			)}
 			{...rest}
 		>
 			{icon && !href && <span className="icon">{icon}</span>}
