@@ -9,7 +9,7 @@ export default function Logo() {
 			className="flex flex-col items-center transition-colors duration-300 lg:flex-1"
 		>
 			<CakeIcon className="w-12 h-12" />
-			<h1 className="text-xl font-bold ">SSR</h1>
+			<h1 className="text-xl font-bold">SSR</h1>
 		</Link>
 	);
 }
