@@ -14,7 +14,7 @@ export default function MenuLink({ href, label }: Props) {
 			href={href}
 			className={classNames(
 				"text-sm font-semibold ledaing-6",
-				href !== useRouter().pathname &&
+				href === useRouter().pathname &&
 					"text-teal-600 pb-1 border-teal-600 border-b-2",
 			)}
 		>
