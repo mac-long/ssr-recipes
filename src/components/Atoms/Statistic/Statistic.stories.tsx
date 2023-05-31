@@ -6,23 +6,23 @@ export default {
 	component: Statistic,
 };
 
-export const DefaultObj = {
+export const Default = {
 	args: {
 		text: "Statistic Text",
 		count: 500000,
 	},
 };
 
-export const RecipesObj = {
+export const Recipes = {
 	args: {
 		text: "Recipes & Counting",
-		count: 100000,
+		count: 10000,
 	},
 };
 
-export const UsersObj = {
+export const Users = {
 	args: {
 		text: "Wonderful Users",
-		count: 50000,
+		count: 5000,
 	},
 };
