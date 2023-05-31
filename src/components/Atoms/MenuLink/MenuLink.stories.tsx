@@ -6,7 +6,7 @@ export default {
 	component: MenuLink,
 	args: {
 		href: "/testing1234",
-		label: "Great Page"
+		label: "Great Page",
 	},
 	tags: ["autodocs"],
 } as Meta<typeof MenuLink>;
