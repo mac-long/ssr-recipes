@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import TextArea from "../Input";
+import TextArea from ".";
 
 export default {
 	title: "Components/Atoms/Forms/TextArea",

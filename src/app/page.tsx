@@ -1,4 +1,4 @@
-import Button from "@/components/Atoms/Button/cva";
+import Button from "@/components/Atoms/Button";
 
 export default async function Home() {
 	return (
