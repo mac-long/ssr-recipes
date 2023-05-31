@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { ButtonHTMLAttributes, HTMLrest, ReactNode } from "react";
+import { ButtonHTMLAttributes, HTMLProps, ReactNode } from "react";
 import Spinner from "../Spinner";
 
-export interface rest extends ButtonHTMLAttributes<HTMLButtonElement> {
-	href?: HTMLrest<HTMLAnchorElement>["href"];
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+	href?: HTMLProps<HTMLAnchorElement>["href"];
 	newTab?: boolean;
 	label?: string;
 	icon?: ReactNode;
@@ -27,8 +27,8 @@ export default function Button({
 	loading,
 	spinnerColor,
 	fullWidth,
-	...rest
-}: rest) {
+	...props
+}: Props) {
 	const styles = classNames(
 		primary && "primary",
 		reverse && !href && "flex-row-reverse space-x-reverse",
@@ -38,7 +38,7 @@ export default function Button({
 	);
 
 	const button = (
-		<button {...rest} type={rest.type || "button"} className={styles}>
+		<button {...props} type={props.type} className={styles}>
 			{icon && !href && <span className="icon">{icon}</span>}
 			{loading && <Spinner color={spinnerColor} />}
 			{label && <span>{label}</span>}

@@ -30,7 +30,6 @@ export default function Select({ options, ...rest }: rest) {
 			open ? "animate-slideDown" : "animate-slideUp",
 		),
 		select: "m-0 bg-transparent appearance-none focus:ring-0",
-		option: "h-auto input",
 	};
 
 	return (
@@ -73,7 +72,7 @@ export default function Select({ options, ...rest }: rest) {
 							type="button"
 							onClick={() => (setSelected(i), setOpen(!open))}
 							onKeyDown={() => (setSelected(i), setOpen(!open))}
-							className={styles.button + styles.option}
+							className={`${styles.button} h-auto input`}
 						>
 							{option.name}
 						</button>
