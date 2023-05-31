@@ -13,6 +13,6 @@ export const Default: Story = {};
 
 export const Coloured: Story = {
 	args: {
-		color: "text-red-500",
+		color: "text-green-500",
 	},
 };
