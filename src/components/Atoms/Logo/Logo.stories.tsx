@@ -7,5 +7,4 @@ export default {
 	tags: ["autodocs"],
 } as Meta<typeof Logo>;
 
-
 export const Default = {};

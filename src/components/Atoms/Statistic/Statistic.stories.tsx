@@ -6,7 +6,6 @@ export default {
 	component: Statistic,
 };
 
-
 export const DefaultObj = {
 	args: {
 		text: "Statistic Text",

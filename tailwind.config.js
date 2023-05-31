@@ -10,7 +10,7 @@ module.exports = {
 				slideRight: "slideRight .5s ease-in",
 				slideUp: "slideUp .3s ease-out",
 				slideDown: "slideDown .3s ease-in",
-				rotate180: "rotate180 .3s ease-in-out"
+				rotate180: "rotate180 .3s ease-in-out",
 			},
 			keyframes: {
 				fadeIn: {
@@ -34,9 +34,9 @@ module.exports = {
 					"100%": { opacity: 1, transform: "translateY(0)", zIndex: 10 },
 				},
 				rotate180: {
-					"0%": {  transform: "rotate(180deg)" },
+					"0%": { transform: "rotate(180deg)" },
 					"100%": { transform: "rotate(0deg)" },
-				}
+				},
 			},
 		},
 	},

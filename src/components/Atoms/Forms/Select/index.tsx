@@ -1,8 +1,5 @@
 "use client";
-import {
-	ChevronDownIcon,
-	ChevronUpIcon
-} from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { SelectHTMLAttributes, useState } from "react";
 
@@ -28,9 +25,12 @@ export default function Select({ options, ...rest }: rest) {
 			open && "rounded-b-none",
 			!rest.multiple && "pr-2",
 		),
-		options: classNames("options", open ? "animate-slideDown" : "animate-slideUp"),
+		options: classNames(
+			"options",
+			open ? "animate-slideDown" : "animate-slideUp",
+		),
 		select: "m-0 bg-transparent appearance-none focus:ring-0",
-		option: "h-auto input rounded-none",
+		option: "h-auto input",
 	};
 
 	return (
@@ -83,8 +83,3 @@ export default function Select({ options, ...rest }: rest) {
 		</label>
 	);
 }
-
-
-  // .options {
-  //   @apply w-full h-auto input bg-slate-900;
-  // }

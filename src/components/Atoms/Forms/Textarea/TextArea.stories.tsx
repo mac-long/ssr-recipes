@@ -7,7 +7,6 @@ export default {
 	tags: ["autodocs"],
 } as Meta<typeof TextArea>;
 
-
 export const Default = {
 	args: {
 		name: "Message",

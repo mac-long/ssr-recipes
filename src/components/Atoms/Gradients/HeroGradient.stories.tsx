@@ -6,5 +6,4 @@ export default {
 	component: HeroGradient,
 };
 
-
 export const Hero = {};
