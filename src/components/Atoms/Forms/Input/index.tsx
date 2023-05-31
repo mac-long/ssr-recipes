@@ -1,13 +1,11 @@
 import { InputHTMLAttributes } from "react";
-type Props = InputHTMLAttributes<HTMLInputElement>;
+type rest = InputHTMLAttributes<HTMLInputElement>;
 
-export default function Input({ ...rest }: Props) {
+export default function Input({ ...rest }: rest) {
 	return (
-		<>
-			<label htmlFor={rest.name} className="sr-only">
-				{rest.name}
-			</label>
+		<label htmlFor={rest.name}>
+			{rest.name}
 			<input {...rest} />
-		</>
+		</label>
 	);
 }

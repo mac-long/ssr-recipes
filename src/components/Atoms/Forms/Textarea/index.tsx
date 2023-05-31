@@ -1,8 +1,8 @@
 import { TextareaHTMLAttributes } from "react";
 
-type Props = TextareaHTMLAttributes<HTMLTextAreaElement>;
+type rest = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export default function Input({ ...rest }: Props) {
+export default function Input({ ...rest }: rest) {
 	return (
 		<>
 			<label htmlFor={rest.name} className="sr-only">

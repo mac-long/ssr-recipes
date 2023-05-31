@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import MenuLink from ".";
 
 export default {
@@ -7,6 +7,5 @@ export default {
 	tags: ["autodocs"],
 } as Meta<typeof MenuLink>;
 
-type Story = StoryObj<typeof MenuLink>;
 
-export const Default: Story = {};
+export const Default = {};

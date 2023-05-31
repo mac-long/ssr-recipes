@@ -1,4 +1,3 @@
-import { StoryObj } from "@storybook/react";
 import Statistic from ".";
 
 export default {
@@ -7,23 +6,22 @@ export default {
 	component: Statistic,
 };
 
-type Story = StoryObj<typeof Statistic>;
 
-export const Default: StoryObj = {
+export const DefaultObj = {
 	args: {
 		text: "Statistic Text",
 		count: 500000,
 	},
 };
 
-export const Recipes: StoryObj = {
+export const RecipesObj = {
 	args: {
 		text: "Recipes & Counting",
 		count: 100000,
 	},
 };
 
-export const Users: StoryObj = {
+export const UsersObj = {
 	args: {
 		text: "Wonderful Users",
 		count: 50000,

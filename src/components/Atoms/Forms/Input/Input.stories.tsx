@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import Input from ".";
 
 export default {
@@ -12,6 +12,4 @@ export default {
 	},
 } as Meta<typeof Input>;
 
-type Story = StoryObj<typeof Input>;
-
-export const Default: Story = {};
+export const Default = {};

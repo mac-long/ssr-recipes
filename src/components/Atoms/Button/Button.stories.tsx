@@ -4,7 +4,7 @@ import {
 	CogIcon,
 	FireIcon,
 } from "@heroicons/react/24/outline";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import Button from ".";
 
 export default {
@@ -17,64 +17,62 @@ export default {
 	},
 } as Meta<typeof Button>;
 
-type Story = StoryObj<typeof Button>;
+export const Default = {};
 
-export const Default: Story = {};
-
-export const Primary: Story = {
+export const Primary = {
 	args: {
 		primary: true,
 	},
 };
 
-export const Icon: Story = {
+export const Icon = {
 	args: {
 		icon: <FireIcon />,
 	},
 };
 
-export const IconRight: Story = {
+export const IconRight = {
 	args: {
 		icon: <AcademicCapIcon />,
 		reverse: true,
 	},
 };
 
-export const Loading: Story = {
+export const Loading = {
 	args: {
 		loading: true,
 	},
 };
 
-export const LoadingColored: Story = {
+export const LoadingColored = {
 	args: {
 		loading: true,
 		spinnerColor: "text-teal-600",
 	},
 };
 
-export const LoadingOnly: Story = {
+export const LoadingOnly = {
 	args: {
 		label: undefined,
 		loading: true,
 	},
 };
 
-export const LoadingRight: Story = {
+export const LoadingRight = {
 	args: {
 		loading: true,
 		reverse: true,
 	},
 };
 
-export const Submit: Story = {
+export const Submit = {
 	args: {
 		label: "Submit",
 		type: "submit",
 	},
 };
 
-export const Ghost: Story = {
+export const Ghost = {
 	args: {
 		ghost: true,
 	},
@@ -88,20 +86,20 @@ export const GhostWithIcon = {
 	},
 };
 
-export const FullWidth: Story = {
+export const FullWidth = {
 	args: {
 		fullWidth: true,
 	},
 };
 
-export const FullWidthIcon: Story = {
+export const FullWidthIcon = {
 	args: {
 		fullWidth: true,
 		icon: <CogIcon />,
 	},
 };
 
-export const FullWidthLoading: Story = {
+export const FullWidthLoading = {
 	args: {
 		label: undefined,
 		fullWidth: true,

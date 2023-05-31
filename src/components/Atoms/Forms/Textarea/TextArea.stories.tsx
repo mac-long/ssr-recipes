@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import TextArea from ".";
 
 export default {
@@ -7,9 +7,8 @@ export default {
 	tags: ["autodocs"],
 } as Meta<typeof TextArea>;
 
-type Story = StoryObj<typeof TextArea>;
 
-export const Default: Story = {
+export const Default = {
 	args: {
 		name: "Message",
 		placeholder: "What an incredible message you shall craft.",

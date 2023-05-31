@@ -48,7 +48,7 @@ I chose to create an atomic design system, starting from the tiniest of componen
 - Typescript once understood and setup properly does make life a lot easier further down the line.
   - Completions are very useful.
   - Errors in the IDE before waiting for pages to load and clicking through or any API calls.
-  - Encourages you to think about all the possible props that could possible exist for a given component.
+  - Encourages you to think about all the possible rest that could possible exist for a given component.
 - Chromatic allows for automated snapshot testing which saves developers a whole bunch of time manually opening the application in their browser window, instead they can just check the chromatic url sent to their email or Slack channel and view it like a regular PR.
 - Running tests in GitHub Actions ensures all code is ready to be merged before allowing the main branch to be affected.
 - Rome for Linting and Formatting... This one was a surprise, minimal configuration due to sane defaults, it's also super quick because it's built with rust! This tool runs lint checks on average at `1.236s` and formatting at a ridiculously quick `0.5s`. You can run these tests with the tiny shell script below.

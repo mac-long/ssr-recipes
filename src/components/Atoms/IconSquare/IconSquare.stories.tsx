@@ -1,4 +1,3 @@
-import { StoryObj } from "@storybook/react";
 import IconSquare from ".";
 
 export default {
@@ -6,5 +5,3 @@ export default {
 	tags: ["autodocs"],
 	component: IconSquare,
 };
-
-type Story = StoryObj<typeof IconSquare>;

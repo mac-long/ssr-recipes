@@ -1,7 +1,7 @@
 export default function HeroGradient() {
 	return (
 		<div
-			className="overflow-hidden absolute inset-x-0 -top-40 transform-gpu sm:-top-80 -z-10 blur-3xl"
+			className="absolute inset-x-0 overflow-hidden -top-40 transform-gpu sm:-top-80 -z-10 blur-3xl"
 			aria-hidden="true"
 		>
 			<div

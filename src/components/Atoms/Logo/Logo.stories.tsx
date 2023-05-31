@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import Logo from ".";
 
 export default {
@@ -7,6 +7,5 @@ export default {
 	tags: ["autodocs"],
 } as Meta<typeof Logo>;
 
-type Story = StoryObj<typeof Logo>;
 
-export const Default: Story = {};
+export const Default = {};
