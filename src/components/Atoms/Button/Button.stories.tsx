@@ -5,7 +5,7 @@ import {
 	FireIcon,
 } from "@heroicons/react/24/outline";
 import type { Meta, StoryObj } from "@storybook/react";
-import Button from "./index";
+import Button from ".";
 
 export default {
 	title: "Components/Atoms/Button",

@@ -41,14 +41,16 @@
     }
   }
 
-  input {
+  input, textarea {
     @apply px-3 py-2.5;
     @apply text-sm text-white/95 bg-gray-900/95;
     @apply rounded-md outline outline-0 border-2 border-transparent;
     @apply transition-colors duration-300;
     @apply focus:border-teal-600 focus:border-2;
   }
-
+  textarea {
+    @apply h-32;
+  }
 }
 
 @layer components {
