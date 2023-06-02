@@ -1,5 +1,5 @@
-import Button from "@/components/Atoms/Button";
 import Select from "@/components/Atoms/Forms/Select";
+import Button from "@/components/Atoms/Generics/Button";
 
 export default async function Home() {
 	return (

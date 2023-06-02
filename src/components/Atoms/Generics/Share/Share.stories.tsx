@@ -3,7 +3,7 @@ import {
 	EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import { Meta } from "@storybook/react";
-import Share from "../Share";
+import Share from ".";
 
 export default {
 	title: "Components/Atoms/Share",
