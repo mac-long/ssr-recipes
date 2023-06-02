@@ -19,7 +19,7 @@ interface Props {
 }
 
 export default function Share({ options, seperators }: Props) {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 	const [copied, setCopied] = useState(false);
 	const router = useRouter();
 	const menuRef = useRef<HTMLDivElement>(null);
