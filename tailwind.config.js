@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			animation: {
 				fadeIn: "fadeIn .3s ease-in",
+				fadeOut: "fadeOut .3s ease-out",
 				slideLeft: "slideLeft .5s ease-in",
 				slideRight: "slideRight .5s ease-in",
 				slideUp: "slideUp .3s ease-out",
@@ -16,6 +17,10 @@ module.exports = {
 				fadeIn: {
 					"0%": { opacity: 0 },
 					"100%": { opacity: 1 },
+				},
+				fadeOut: {
+					"0%": { opacity: 1 },
+					"100%": { opacity: 0 },
 				},
 				slideLeft: {
 					"0%": { opacity: 0, transform: "translateX(-50px)" },
