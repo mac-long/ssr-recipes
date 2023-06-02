@@ -54,7 +54,7 @@ export default function Share({ options, seperators }: Props) {
 			<button
 				type="button"
 				onClick={() => setOpen(!open)}
-				className="grid place-items-center px-3 text-sm font-semibold bg-transparent rounded-md ring-1 ring-gray-300 ring-inset text-gray-900 shadow-sm hover:bg-gray-300"
+				className="grid place-items-center px-3 text-sm font-semibold text-gray-900 bg-transparent rounded-md ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-gray-300"
 				ref={menuButtonRef}
 			>
 				<ShareIcon className="w-5 h-5" />
@@ -62,21 +62,25 @@ export default function Share({ options, seperators }: Props) {
 			{open && (
 				<div
 					ref={menuRef}
-					className="absolute flex items-center mt-2 bg-white rounded-md ring-1 ring-gray-900 ring-opacity-5 shadow-lg focus:outline-none animate-fadeIn"
+					className="flex absolute items-center mt-2 bg-white rounded-md ring-1 ring-gray-900 ring-opacity-5 shadow-lg focus:outline-none animate-fadeIn"
 				>
 					{options.map(({ id, icon, href, copy }, i) => (
 						<>
 							<div
 								key={id}
-								className="flex mx-1 first:ml-0 last:mr-0 items-center hover:bg-gray-300 p-2 first:rounded-l-md last:rounded-r-md"
+								className="flex items-center p-2 mx-1 first:ml-0 first:rounded-l-md last:mr-0 last:rounded-r-md hover:bg-gray-300"
 							>
 								{href && (
-									<a href={href} className="button ghost w-full">
+									<a href={href} className="w-full button ghost">
 										{icon}
 									</a>
 								)}
 								{copy && (
-									<button type="button" onClick={triggerCopy} className="ghost w-full">
+									<button
+										type="button"
+										onClick={triggerCopy}
+										className="w-full ghost"
+									>
 										{copied ? (
 											<CheckCircleIcon className="text-green-500 animate-fadeIn" />
 										) : (
@@ -85,7 +89,9 @@ export default function Share({ options, seperators }: Props) {
 									</button>
 								)}
 							</div>
-							{seperators && i !== options.length - 1 && <div className="w-[1px] h-5 bg-gray-300" />}
+							{seperators && i !== options.length - 1 && (
+								<div className="h-5 bg-gray-300 w-[1px]" />
+							)}
 						</>
 					))}
 				</div>
