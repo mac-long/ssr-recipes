@@ -41,7 +41,7 @@ export default function Button({
 
 	const button = (
 		<button {...props} type={props.type} className={styles}>
-			{icon && !href && <span className="icon">{icon}</span>}
+			{icon && <span className="icon">{icon}</span>}
 			{loading && <Spinner color={spinnerColor} />}
 			{label && <span>{label}</span>}
 		</button>
