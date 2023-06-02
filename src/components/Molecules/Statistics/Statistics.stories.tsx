@@ -17,8 +17,8 @@ export default {
 			{
 				text: "Users",
 				count: 10000,
-			}
-		]
+			},
+		],
 	},
 	tags: ["autodocs"],
 } as Meta<typeof Statistics>;
