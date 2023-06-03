@@ -35,9 +35,9 @@
     }
 
     &.ghost {
-      @apply text-gray-900 bg-transparent shadow-none;
-      @apply dark:text-slate-100;
-      @apply hover:bg-transparent hover:text-teal-600;
+      @apply text-gray-900 shadow-none bg-gray-900/20 border-gray-600 border-[1px];
+      @apply dark:text-slate-100 dark:bg-slate-900 dark:border-gray-600;
+      @apply hover:bg-gray-900/40;
     }
 
     &.select {
