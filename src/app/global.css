@@ -5,8 +5,7 @@
 @layer base {
   html {
     @apply bg-slate-100 text-slate-900;
-    @apply dark:bg-slate-900 dark:text-slate-900;
-
+    @apply dark:bg-slate-900 dark:text-slate-100;
   }
 
   main {

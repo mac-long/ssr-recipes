@@ -6,18 +6,21 @@ export default {
 	title: "Components/Molecules/Hero",
 	component: Hero,
 	args: {
-    title: "Share your favourites",
-    description: "Send the recipe to the whole family so everyone can try out the amazing recipes you discover and enjoy.",
-    buttons: [{
-      label: "Share",
-      href: "https://google.com",
-    },
-    {
-      label: "Share",
-      href: "https://google.com",
-      icon: <ShareIcon />,
-    }
-  ]
+		title: "Share your favourites",
+		description:
+			"Send the recipe to the whole family so everyone can try out the amazing recipes you discover and enjoy.",
+		buttons: [
+			{
+				label: "Share",
+				href: "https://google.com",
+			},
+			{
+				label: "Share",
+				href: "https://google.com",
+				icon: <ShareIcon />,
+				primary: true,
+			},
+		],
 	},
 	tags: ["autodocs"],
 } as Meta<typeof Hero>;
