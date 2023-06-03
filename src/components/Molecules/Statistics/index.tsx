@@ -1,5 +1,5 @@
-import type { Props as StatisticProps } from '@/components/Atoms/Statistic';
-import Statistic from '@/components/Atoms/Statistic';
+import type { Props as StatisticProps } from "@/components/Atoms/Statistic";
+import Statistic from "@/components/Atoms/Statistic";
 
 export default function Statistics({
 	statistics,
