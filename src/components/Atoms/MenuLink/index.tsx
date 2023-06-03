@@ -7,15 +7,14 @@ type Props = {
 	label: string;
 };
 
-// get path, underline on sm:> highlight on mobile.
 export default function MenuLink({ href, label }: Props) {
 	return (
 		<Link
 			href={href}
 			className={classNames(
-				"text-sm font-semibold ledaing-6",
-				href === useRouter().pathname &&
-					"text-teal-600 pb-1 border-teal-600 border-b-2",
+				"text-sm font-semibold ledaing-6 p-2 rounded-md",
+					href === useRouter().pathname &&
+					"bg-gray-300 sm:text-teal-600 sm:pb-1 border-teal-600 sm:border-b-2",
 			)}
 		>
 			{label}
