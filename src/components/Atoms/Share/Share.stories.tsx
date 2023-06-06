@@ -20,10 +20,6 @@ export default {
 				icon: <DevicePhoneMobileIcon />,
 				href: "sms:&body=Enjoy%20this%20ridiculously%20awesome%20message%20I%20have%20sent%20you",
 			},
-			{
-				id: 2,
-				copy: true,
-			},
 		],
 	},
 	tags: ["autodocs"],
