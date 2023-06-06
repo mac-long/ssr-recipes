@@ -1,22 +1,15 @@
 import Background from "@/components/Atoms/Recipes/Content/Background";
 import CreationTime from "@/components/Atoms/Recipes/Content/CreationTime";
 import Share from "@/components/Atoms/Share";
+import { Database } from "@/lib/db";
 import {
+	CameraIcon,
 	DevicePhoneMobileIcon,
 	EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
-export interface RecipeProps {
-	meal: string;
-	title: string;
-	image: string;
-	summary: string;
-	ingredients: string[];
-	creation_time: string;
-	instructions: string[];
-}
 
 export default function Content({
 	meal,
@@ -26,7 +19,7 @@ export default function Content({
 	ingredients,
 	creation_time,
 	instructions,
-}: RecipeProps) {
+}: Database["recipe"] & Database["recipe_translation"]) {
 	return (
 		<div className="overflow-hidden relative py-32 px-6 bg-white lg:overflow-visible lg:px-0 isolate">
 			<Background />
@@ -34,8 +27,8 @@ export default function Content({
 				<div className="lg:grid lg:grid-cols-2 lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:gap-x-8 lg:px-8 lg:mx-auto lg:w-full lg:max-w-7xl">
 					<div className="lg:pr-4">
 						<div className="lg:max-w-lg">
-							<div className="mt-2 space-x-3 text-3xl font-bold tracking-tight sm:text-4xl">
-								<h1>{title}</h1>
+							<div className="space-x-3 text-3xl font-bold tracking-tight sm:text-4xl flex items-center">
+								<h1 className="m-0">{title}</h1>
 								<Share
 									options={[
 										{
@@ -83,16 +76,16 @@ export default function Content({
 						placeholder="blur"
 						blurDataURL="https://placehold.co/1024x662"
 					/>
-					{/* <Link
-						className="flex items-center w-64 text-xs font-extralight"
-						href={photographer_url || "https://openai.com/dalle"}
+					<Link
+						className="flex items-center w-64 text-xs font-extralight no-underline"
+						href={image.photographer?.url || "https://openai.com/dalle"}
 						target="_blank"
 					>
 						<CameraIcon className="mr-1 mb-1 w-6 h-6" />
-						{photographer_name || "DALL-E 2"}
-					</Link> */}
+						{image.photographer?.name || "DALL-E 2"}
+					</Link>
 				</div>
-				<Link href="/recipes" className="mx-auto button primary">
+				<Link href="/recipes" className="mx-auto button primary no-underline">
 					Back to recipes
 				</Link>
 			</div>

@@ -5,7 +5,7 @@ export default {
 	title: "Components/Atoms/Recipe/Creation Time",
 	component: CreationTime,
 	args: {
-		time: "90 minutes",
+		time: 0.5,
 	},
 	tags: ["autodocs"],
 	decorators: [
@@ -20,6 +20,6 @@ export default {
 export const Default = {};
 export const OtherTime = {
 	args: {
-		time: "1.5 hours",
+		time: 1.5,
 	},
 };
