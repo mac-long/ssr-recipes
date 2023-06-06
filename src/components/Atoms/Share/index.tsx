@@ -5,12 +5,12 @@ import {
 	ShareIcon,
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
-import { MouseEvent, ReactNode, useEffect, useRef, useState } from "react";
+import { MouseEvent, React, useEffect, useRef, useState } from "react";
 
 interface Props {
 	options: {
 		id: number;
-		icon?: ReactNode;
+		icon?: React.ReactNode;
 		href?: string;
 		message?: string;
 		copy?: boolean;

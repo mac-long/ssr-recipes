@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { ButtonHTMLAttributes, HTMLProps, ReactNode } from "react";
+import { ButtonHTMLAttributes, HTMLProps, React } from "react";
 import Spinner from "../Spinner";
 
 const number = Math.round(145 * (5000 / 3) + 250);
@@ -9,7 +9,7 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	href?: HTMLProps<HTMLAnchorElement>["href"];
 	newTab?: boolean;
 	label?: string;
-	icon?: ReactNode;
+	icon?: React.ReactNode;
 	primary?: boolean;
 	ghost?: boolean;
 	reverse?: boolean;

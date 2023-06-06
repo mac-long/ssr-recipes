@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { React } from "react";
 
 export interface Props {
-	icon: ReactNode;
+	icon: React.ReactNode;
 	name: string;
 	description: string;
 }
