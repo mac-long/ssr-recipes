@@ -1,6 +1,6 @@
 export default function NewsletterHeader() {
 	return (
-		<div className="max-w-xl lg:max-w-lg bg-gray-900">
+		<div className="max-w-xl bg-gray-900 lg:max-w-lg">
 			<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 				Subscribe to our newsletter.
 			</h2>
