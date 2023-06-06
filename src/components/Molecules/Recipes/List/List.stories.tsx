@@ -4,8 +4,7 @@ import List from ".";
 export default {
 	title: "Components/Molecules/Recipes/List",
 	component: List,
-	args: {
-	},
+	args: {},
 	tags: ["autodocs"],
 } as Meta<typeof List>;
 

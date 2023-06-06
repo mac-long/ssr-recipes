@@ -1,6 +1,10 @@
 import { React } from "react";
 
-export default function List({title, description, children}: {title: string, description: string, children: React.ReactNode}) {
+export default function List({
+	title,
+	description,
+	children,
+}: { title: string; description: string; children: React.ReactNode }) {
 	return (
 		<>
 			<div className="px-6">
@@ -9,7 +13,7 @@ export default function List({title, description, children}: {title: string, des
 						{title}.
 					</h2>
 					<p className="mt-2 text-lg leading-8 text-slate-600">{description}</p>
-          {children}
+					{children}
 				</div>
 			</div>
 		</>
