@@ -52,7 +52,7 @@ export default function Share({ options, seperators }: Props) {
 			<button
 				type="button"
 				onClick={() => setOpen(!open)}
-				className="grid place-items-center px-3 text-sm font-semibold text-gray-900 bg-transparent rounded-md ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-gray-300"
+				className="grid px-3 text-sm font-semibold text-gray-900 bg-transparent rounded-md shadow-sm place-items-center ring-1 ring-inset ring-gray-300 hover:bg-gray-300"
 				ref={menuButtonRef}
 			>
 				<ShareIcon className="w-5 h-5" />
@@ -60,7 +60,7 @@ export default function Share({ options, seperators }: Props) {
 			{open && (
 				<div
 					ref={menuRef}
-					className="flex absolute items-center mt-2 bg-white rounded-md ring-1 ring-gray-900 ring-opacity-5 shadow-lg focus:outline-none animate-fadeIn"
+					className="absolute flex items-center mt-2 bg-white rounded-md shadow-lg ring-1 ring-gray-900 ring-opacity-5 focus:outline-none animate-fadeIn"
 				>
 					{options.map(({ id, icon, href, copy }, i) => (
 						<>
@@ -69,7 +69,7 @@ export default function Share({ options, seperators }: Props) {
 								className="flex items-center p-2 mx-1 first:ml-0 first:rounded-l-md last:mr-0 last:rounded-r-md hover:bg-gray-300"
 							>
 								{href && (
-									<a href={href} className="w-full button ghost">
+									<a href={href} className="w-full button blank">
 										{icon}
 									</a>
 								)}
@@ -77,7 +77,7 @@ export default function Share({ options, seperators }: Props) {
 									<button
 										type="button"
 										onClick={triggerCopy}
-										className="w-full ghost"
+										className="w-full blank"
 									>
 										{copied ? (
 											<CheckCircleIcon className="text-green-500 animate-fadeIn" />

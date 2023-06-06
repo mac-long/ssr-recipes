@@ -39,6 +39,12 @@
       @apply hover:bg-transparent hover:text-teal-600;
     }
 
+    &.blank {
+      @apply text-gray-900 bg-transparent shadow-none;
+      @apply dark:text-slate-100;
+      @apply hover:bg-transparent hover:text-teal-600;
+    }
+
     &.select {
       @apply justify-between p-0 focus-within:ring-2 focus-within:border-teal-600 px-3 py-2.5 w-52 h-11;
     }
