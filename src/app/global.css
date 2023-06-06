@@ -34,9 +34,9 @@
     }
 
     &.ghost {
-      @apply text-gray-900 shadow-none bg-gray-900/20 border-gray-600 border-[1px];
-      @apply dark:text-slate-100 dark:bg-slate-900 dark:border-gray-600;
-      @apply hover:bg-gray-900/40;
+      @apply text-gray-900 bg-transparent;
+      @apply dark:text-slate-100;
+      @apply hover:bg-transparent hover:text-teal-600;
     }
 
     &.select {
@@ -54,7 +54,7 @@
 
   input, textarea, select {
     @apply px-3 py-2.5 w-52 h-11;
-    @apply text-sm text-white/95 bg-gray-900/95;
+    @apply text-sm text-white/95 bg-gray-900/95 font-normal placeholder:font-normal;
     @apply rounded-md outline outline-0 border-2 border-transparent;
     @apply transition-colors duration-300;
     @apply focus:ring-teal-600 focus:ring-2 focus:invalid:ring-red-500;
