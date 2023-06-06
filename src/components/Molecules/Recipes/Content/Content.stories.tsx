@@ -24,7 +24,7 @@ export default {
 			<main className="prose">
 				<Story />
 			</main>
-		)
+		),
 	],
 	tags: ["autodocs"],
 } as Meta<typeof Content>;

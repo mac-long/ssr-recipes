@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function Content({
 	meal,
 	title,
@@ -27,7 +26,7 @@ export default function Content({
 				<div className="lg:grid lg:grid-cols-2 lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:gap-x-8 lg:px-8 lg:mx-auto lg:w-full lg:max-w-7xl">
 					<div className="lg:pr-4">
 						<div className="lg:max-w-lg">
-							<div className="space-x-3 text-3xl font-bold tracking-tight sm:text-4xl flex items-center">
+							<div className="flex items-center space-x-3 text-3xl font-bold tracking-tight sm:text-4xl">
 								<h1 className="m-0">{title}</h1>
 								<Share
 									options={[
@@ -85,7 +84,7 @@ export default function Content({
 						{image.photographer?.name || "DALL-E 2"}
 					</Link>
 				</div>
-				<Link href="/recipes" className="mx-auto button primary no-underline">
+				<Link href="/recipes" className="mx-auto no-underline button primary">
 					Back to recipes
 				</Link>
 			</div>
