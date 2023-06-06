@@ -4,8 +4,7 @@ import Hero from ".";
 export default {
 	title: "Components/Molecules/Footer/Newsletter/Form",
 	component: Hero,
-	args: {
-	},
+	args: {},
 	tags: ["autodocs"],
 } as Meta<typeof Hero>;
 

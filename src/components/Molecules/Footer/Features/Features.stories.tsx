@@ -4,8 +4,7 @@ import NewsletterFeatures from ".";
 export default {
 	title: "Components/Molecules/Footer/Newsletter/Features",
 	component: NewsletterFeatures,
-	args: {
-	},
+	args: {},
 	tags: ["autodocs"],
 } as Meta<typeof NewsletterFeatures>;
 
