@@ -7,8 +7,8 @@
 		"lint": "rome check .",
 		"format": "rome format --write .",
 		"sb": "storybook dev -p 6006",
-		"sb:build": "storybook build",
-		"chromatic": "pnpx chromatic --build-script-name=sb:build --exit-zero-on-changes"
+		"build-storybook": "storybook build",
+		"chromatic": "pnpx chromatic --exit-zero-on-changes"
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.0.18",
