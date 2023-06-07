@@ -1,15 +1,17 @@
 import type { Meta } from "@storybook/react";
-import Header from ".";
+import Filters from ".";
 
 export default {
 	title: "Components/Molecules/Recipes/Header",
-	component: Header,
+	component: Filters,
 	args: {
 		title: "Recipes",
-		description: "A collection of recipes.",
-		children: null,
+		description: "Find your next meal.",
+		filters: {
+			meals: ["Breakfast", "Lunch", "Dinner", "Snack", "Appetizer"],
+			cuisines: ["American", "Chinese", "French", "Indian", "Italian"],
+		},
 	},
-	tags: ["autodocs"],
-} as Meta<typeof Header>;
+} as Meta;
 
 export const Default = {};
