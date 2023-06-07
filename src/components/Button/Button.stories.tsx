@@ -7,7 +7,6 @@ import {
 import { expect, jest } from "@storybook/jest";
 import type { Meta } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-
 import Button from ".";
 
 const mockOnClick = jest.fn();
@@ -119,9 +118,10 @@ export const Tests = {
 	},
 	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 		const canvas = within(canvasElement);
-		const button = canvas.getByRole("button");
-		expect(button).toHaveTextContent("Click me");
+		const button = canvas.getByRole("button") as HTMLButtonElement;
 		userEvent.click(button);
 		expect(mockOnClick).toHaveBeenCalled();
+		// @ts-ignore
+		expect(button).toHaveTextContent("Click me");
 	},
 };
