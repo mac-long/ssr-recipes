@@ -1,15 +1,22 @@
 import { Database } from "@/lib/db";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
+import RecipeCard from "../Card";
 
 export default function RecipeList({
 	recipes,
-}: { recipes: Database["recipe"] & Database["recipe_translation"][] }) {
+}: {
+	recipes: Omit<Database["recipe"], "image" | "creation_time">[] &
+		Omit<
+			Database["recipe_translation"],
+			"id" | "recipe_id" | "language_code"
+		>[];
+}) {
 	return (
-		<div className="px-6 mx-auto max-w-7xl lg:px-8">
+		<div className="px-6 mx-auto max-w-7xl sm:flex sm:items-center slg:px-8">
 			{recipes.length > 0 ? (
 				<div className="grid grid-cols-1 gap-x-8 pt-10 mx-auto space-y-4 max-w-2xl md:gap-y-8 md:space-y-0 lg:grid-cols-3 lg:mx-0 lg:max-w-none">
 					{recipes.map((recipe) => (
-						<RecipeCard key={recipe.id} recipe={recipe} />
+						<RecipeCard {...recipe} />
 					))}
 				</div>
 			) : (

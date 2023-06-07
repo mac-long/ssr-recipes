@@ -118,4 +118,9 @@
   .options {
     @apply w-full h-auto bg-slate-900 transition-all duration-300 z-10 absolute top-16 left-0;
   }
+
+  .tag {
+    @apply inline-flex items-center space-x-1.5 p-2 rounded-full text-xs font-semibold bg-slate-300 text-slate-800 z-10;
+    @apply hover:bg-teal-600 hover:text-slate-800;
+  }
 }

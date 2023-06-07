@@ -31,7 +31,7 @@ interface RecipeTable {
 			url: string;
 		};
 	};
-	created_on: Generated<Date>;
+	created_on: Date;
 }
 
 interface RecipeTranslationTable {
