@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import Footer from ".";
 
 export default {
-	title: "Components/Molecules/Footer",
+	title: "Components/Organisms/Footer",
 	component: Footer,
 	args: {},
 	tags: ["autodocs"],

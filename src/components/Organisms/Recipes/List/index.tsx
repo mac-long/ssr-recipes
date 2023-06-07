@@ -1,15 +1,12 @@
+import RecipeCard from "@/components/Molecules/Recipes/List/Card";
 import { Database } from "@/lib/db";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
-import RecipeCard from "../Card";
 
 export default function RecipeList({
 	recipes,
 }: {
 	recipes: Omit<Database["recipe"], "image" | "creation_time">[] &
-		Omit<
-			Database["recipe_translation"],
-			"id" | "recipe_id" | "language_code"
-		>[];
+		Omit<Database["recipe_translation"], "id">[];
 }) {
 	return (
 		<div className="px-6 mx-auto max-w-7xl sm:flex sm:items-center slg:px-8">

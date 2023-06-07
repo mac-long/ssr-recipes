@@ -8,8 +8,11 @@ export default function RecipeCard({
 	cuisine,
 	meal,
 	created_on,
-}: Omit<Database["recipe"], "image" | "creation_time"> &
-	Database["recipe_translation"]) {
+}: Pick<Database["recipe"], "id" | "created_on"> &
+	Pick<
+		Database["recipe_translation"],
+		"cuisine" | "meal" | "title" | "summary"
+	>) {
 	const dateString = new Date(created_on).toLocaleDateString();
 
 	return (

@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import List from ".";
 
 export default {
-	title: "Components/Molecules/Recipes/List",
+	title: "Components/Organisms/Recipes/List",
 	component: List,
 	args: {
 		recipes: [

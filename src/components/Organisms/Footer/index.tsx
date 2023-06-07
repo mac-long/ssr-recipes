@@ -1,10 +1,10 @@
+import NewsletterFeatures from "@/components/Molecules/Footer/Features";
+import NewsletterForm from "@/components/Molecules/Footer/Form";
+import NewsletterHeader from "@/components/Molecules/Footer/Header";
 import {
 	CalendarDaysIcon,
 	GlobeEuropeAfricaIcon,
 } from "@heroicons/react/24/outline";
-import NewsletterFeatures from "./Features";
-import NewsletterForm from "./Form";
-import NewsletterHeader from "./Header";
 
 const features = [
 	{

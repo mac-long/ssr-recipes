@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import Content from ".";
 
 export default {
-	title: "Components/Molecules/Recipes/Content",
+	title: "Components/Organisms/Recipes/Content",
 	component: Content,
 	args: {
 		meal: "Breakfast",
