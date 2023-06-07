@@ -1,6 +1,8 @@
 import { Database } from "@/lib/db";
 
-export default function Ingredients({ ingredients }: Pick<Database["recipe_translation"], "ingredients">) {
+export default function Ingredients({
+	ingredients,
+}: Pick<Database["recipe_translation"], "ingredients">) {
 	return (
 		<>
 			<h2>Ingredients</h2>

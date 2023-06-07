@@ -15,9 +15,9 @@ export default {
 			{
 				name: "Feature 2",
 				description: "Feature 2 description",
-				icon: <CameraIcon className="w-5 h-5 text-white" />
-			}
-		]
+				icon: <CameraIcon className="w-5 h-5 text-white" />,
+			},
+		],
 	},
 	tags: ["autodocs"],
 } as Meta<typeof NewsletterFeatures>;
