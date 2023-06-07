@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import CreationTime from ".";
 
 export default {
-	title: "Components/Atoms/Recipe/Creation Time",
+	title: "Components/Atoms/Recipe/Content/Creation Time",
 	component: CreationTime,
 	args: {
 		time: 0.5,

@@ -5,7 +5,7 @@ import {
 	ShareIcon,
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
-import { MouseEvent, React, useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 
 interface Props {
 	options: {

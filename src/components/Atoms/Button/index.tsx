@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { ButtonHTMLAttributes, HTMLProps, React } from "react";
+import { ButtonHTMLAttributes, HTMLProps } from "react";
 import Spinner from "../Spinner";
 
 const number = Math.round(145 * (5000 / 3) + 250);

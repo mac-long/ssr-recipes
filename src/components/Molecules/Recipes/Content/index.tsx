@@ -1,5 +1,7 @@
 import Background from "@/components/Atoms/Recipes/Content/Background";
 import CreationTime from "@/components/Atoms/Recipes/Content/CreationTime";
+import Ingredients from "@/components/Atoms/Recipes/Content/Ingredients";
+import Instructions from "@/components/Atoms/Recipes/Content/Instructions";
 import Share from "@/components/Atoms/Share";
 import { Database } from "@/lib/db";
 import {
@@ -46,22 +48,11 @@ export default function Content({
 								/>
 							</div>
 							<p className="mt-6 text-xl leading-8">{summary}</p>
-							<h2>Ingredients</h2>
-							<ul>
-								{ingredients.map((ingredient) => (
-									<li key={ingredient}>{ingredient}</li>
-								))}
-							</ul>
-							<h2>Creation Time</h2>
+							<Ingredients ingredients={ingredients} />
 							<CreationTime time={creation_time} />
 						</div>
 					</div>
-					<h2>Instructions</h2>
-					<ol>
-						{instructions.map((instruction) => (
-							<li key={instruction}>{instruction}</li>
-						))}
-					</ol>
+					<Instructions instructions={instructions} />
 				</div>
 				<div className="p-12 -mt-12 -ml-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 animate-slideRight">
 					<Image
