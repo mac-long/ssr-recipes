@@ -12,6 +12,7 @@ export default {
 			cuisines: ["American", "Chinese", "French", "Indian", "Italian"],
 		},
 	},
+	tags: ["autodocs"],
 } as Meta;
 
 export const Default = {};
