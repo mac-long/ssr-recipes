@@ -67,16 +67,18 @@ export default function Select({ options, ...rest }: rest) {
 			</button>
 			{!rest.multiple && open && (
 				<div className={styles.options}>
-					{options.map((option, i) => (
-						<button
-							type="button"
-							onClick={() => (setSelected(i), setOpen(!open))}
-							onKeyDown={() => (setSelected(i), setOpen(!open))}
-							className={`${styles.button} h-auto input`}
-						>
-							{option.name}
-						</button>
-					))}
+					{options
+						.filter((option) => option.name !== options[selected].name)
+						.map((option, i) => (
+							<button
+								type="button"
+								onClick={() => (setSelected(i), setOpen(!open))}
+								onKeyDown={() => (setSelected(i), setOpen(!open))}
+								className={`${styles.button} h-auto input`}
+							>
+								{option.name}
+							</button>
+						))}
 				</div>
 			)}
 		</label>

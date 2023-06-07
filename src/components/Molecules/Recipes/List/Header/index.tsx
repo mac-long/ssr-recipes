@@ -1,8 +1,11 @@
-export default function List({
+import { Database } from "@/lib/db";
+import Filters from "../Filters";
+
+export default function Header({
 	title,
 	description,
-	children,
-}: { title: string; description: string; children: React.ReactNode }) {
+	filters
+}: { title: string; description: string; filters: Pick<Database["recipe_translation"], "meal" | "cuisine"> }) {
 	return (
 		<>
 			<div className="px-6">
@@ -11,7 +14,7 @@ export default function List({
 						{title}.
 					</h2>
 					<p className="mt-2 text-lg leading-8 text-slate-600">{description}</p>
-					{children}
+					<Filters filters={filters} />
 				</div>
 			</div>
 		</>
