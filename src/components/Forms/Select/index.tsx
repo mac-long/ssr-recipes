@@ -66,7 +66,7 @@ export default function Select({ options, ...rest }: rest) {
 				</span>
 			</button>
 			{!rest.multiple && open && (
-				<div className={styles.options}>
+				<div className={styles.options} role="listbox">
 					{options
 						.filter((option) => option.name !== options[selected].name)
 						.map((option, i) => (

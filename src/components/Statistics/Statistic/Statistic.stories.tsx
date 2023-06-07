@@ -2,16 +2,15 @@ import Statistic from ".";
 
 export default {
 	title: "Components/Statistics/Statistic",
-	tags: ["autodocs"],
-	component: Statistic,
-};
-
-export const Default = {
 	args: {
 		text: "Statistic Text",
 		count: 500000,
 	},
+	tags: ["autodocs"],
+	component: Statistic,
 };
+
+export const Default = {};
 
 export const Recipes = {
 	args: {

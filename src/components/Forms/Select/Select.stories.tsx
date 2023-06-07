@@ -15,6 +15,7 @@ export default {
 } as Meta<typeof Select>;
 
 export const Default = {};
+
 export const Multiple = {
 	args: {
 		multiple: true,
