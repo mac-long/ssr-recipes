@@ -14,8 +14,8 @@ export default function RecipeCard({
 
 	return (
 		<Link href={`/recipes/${id}`} passHref>
-			<div className="flex flex-row-reverse group justify-between p-10 rounded-md hover:bg-gray-200 cursor-pointer shadow-md">
-				<div className="flex flex-col items-end justify-between text-xs">
+			<div className="flex flex-row-reverse justify-between p-10 rounded-md shadow-md cursor-pointer hover:bg-gray-200 group">
+				<div className="flex flex-col justify-between items-end text-xs">
 					<time dateTime={dateString} className="text-slate-500">
 						{dateString}
 					</time>
@@ -29,10 +29,10 @@ export default function RecipeCard({
 					</div>
 				</div>
 				<div>
-					<h3 className="text-lg font-semibold mb-2 group-hover:text-teal-600">
+					<h3 className="mb-2 text-lg font-semibold group-hover:text-teal-600">
 						{title}
 					</h3>
-					<p className="text-xs leading-6 text-slate-600 max-w-sm">
+					<p className="max-w-sm text-xs leading-6 text-slate-600">
 						<span>{summary}</span>
 					</p>
 				</div>
