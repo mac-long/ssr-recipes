@@ -13,6 +13,7 @@ export default function RecipeCard({
 		Database["recipe_translation"],
 		"cuisine" | "meal" | "title" | "summary"
 	>) {
+	// @ts-ignore
 	const dateString = new Date(created_on).toLocaleDateString();
 
 	return (
