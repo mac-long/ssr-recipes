@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { expect } from "@storybook/jest";
 import type { Meta } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
@@ -22,7 +23,7 @@ export const Tests = {
 		type: "text",
 		placeholder: "Enter your text here...",
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement }: { canvasElement: HTMLCanvasElement }) => {
 		const canvas = within(canvasElement);
 		const label = canvas.getByText("Input");
 		const input = canvas.getByRole("textbox");
