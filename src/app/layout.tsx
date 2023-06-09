@@ -1,3 +1,5 @@
+import Footer from "@/components/Layout/Footer";
+import Header from "@/components/Layout/Header";
 import Script from "next/script";
 import "./global.css";
 
@@ -15,7 +17,9 @@ export default function RootLayout({
 		<html lang="en">
 			<Script src="http://localhost:8097" />
 			<body className="scroll-smooth">
-				<main className="prose">{children}</main>
+				<Header />
+					<main className="prose min-h-screen">{children}</main>
+				<Footer />
 			</body>
 		</html>
 	);
