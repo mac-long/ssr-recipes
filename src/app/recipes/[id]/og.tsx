@@ -56,9 +56,12 @@ export default async function Image({ params }: { params: { id: number } }) {
 					color: "transparent",
 				}}
 			>
-				{recipe?.title}
+				{recipe?.title || "Example Title"}
 			</div>
-			<p style={{ fontSize: 26 }}>{recipe?.summary}</p>
+			<p style={{ fontSize: 26 }}>
+				{recipe?.summary ||
+					"Some amazing string of text full of wonderful details!"}
+			</p>
 		</div>,
 	);
 }

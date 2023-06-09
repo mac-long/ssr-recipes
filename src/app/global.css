@@ -1,3 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-slate-100 text-slate-900;
+    @apply dark:bg-slate-900 dark:text-slate-100;
+  }
+
+  main {
+    @apply prose;
+  }
+
+  a {
+    @apply text-inherit transition-colors no-underline duration-300;
+    @apply hover:text-teal-600;
+  }
+
+  button,
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  .button {
+    @apply flex items-center space-x-2;
+    @apply shadow-sm rounded-md text-sm font-semibold bg-slate-900 text-slate-100;
+    @apply transition-colors duration-300;
+    @apply px-3.5 py-2;
+    @apply hover:bg-slate-700;
+    @apply dark:bg-slate-100 dark:text-gray-900;
+    @apply hover:dark:bg-slate-300;
+
+    &.primary {
+      @apply bg-teal-600;
+      @apply hover:bg-teal-800;
+      @apply dark:bg-teal-800 text-slate-100;
+      @apply hover:dark:bg-teal-700;
+    }
+
+    &.ghost {
+      @apply text-gray-900 bg-transparent;
+      @apply dark:text-slate-100;
+      @apply hover:bg-transparent hover:text-teal-600;
+    }
+
+    &.blank {
+      @apply text-gray-900 bg-transparent shadow-none;
+      @apply dark:text-slate-100;
+      @apply hover:bg-transparent hover:text-teal-600;
+    }
+
+    &.select {
+      @apply font-normal justify-between p-0 focus-within:ring-2 focus-within:border-teal-600 px-3 py-2.5 w-52 h-11;
+    }
+
+    svg {
+      @apply w-5 h-5;
+    }
+  }
+
+  label {
+    @apply flex flex-col font-semibold text-sm justify-center relative max-w-[13rem];
+  }
+
+  input,
+  textarea,
+  select {
+    @apply px-3 py-2.5 w-52 h-11 mt-1.5;
+    @apply text-sm text-white/95 bg-gray-900/95 font-normal placeholder:font-normal;
+    @apply rounded-md outline outline-0 border-2 border-transparent ring-2 ring-teal-700;
+    @apply transition-colors duration-300;
+    @apply focus:ring-teal-400 focus:ring-2 focus:invalid:ring-red-500;
+
+    &.search {
+      @apply py-1.5 pl-1 w-full text-gray-900 bg-transparent sm:text-sm focus:ring-0 placeholder:text-gray-400;
+    }
+  }
+
+  textarea {
+    @apply resize-none h-32;
+  }
+
+  select {
+    @apply appearance-none;
+  }
+}
+
+@layer components {
+  .icon,
+  .icon svg {
+    @apply w-5 h-5;
+  }
+
+  .spinner {
+    @apply inline-block w-5 h-5;
+    @apply text-current;
+    @apply border-4 rounded-full border-current border-solid border-r-transparent;
+    @apply animate-spin motion-reduce:animate-[spin_1.5s_linear_infinite];
+  }
+
+  .tag {
+    @apply inline-flex items-center space-x-1.5 p-2 rounded-full text-xs font-semibold bg-slate-300 text-slate-800 z-10;
+    @apply hover:bg-teal-600 hover:text-slate-800;
+  }
+}
