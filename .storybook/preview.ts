@@ -1,3 +1,4 @@
+import { withConsole } from "@storybook/addon-console";
 import { withThemeByDataAttribute } from "@storybook/addon-styling";
 import type { Preview } from "@storybook/react";
 import "../src/app/global.css";
@@ -19,6 +20,7 @@ const preview: Preview = {
 				"Pages",
 			],
 		},
+		decorators: [(storyFn, context) => withConsole()(storyFn)(context)],
 	},
 };
 

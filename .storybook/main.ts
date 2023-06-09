@@ -1,3 +1,4 @@
+import "@storybook/addon-console";
 import { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
@@ -9,6 +10,7 @@ const config: StorybookConfig = {
 		"@storybook/addon-links",
 		"@storybook/addon-storysource",
 		"@storybook/test-runner",
+		"@storybook/addon-console",
 		"storybook-mobile",
 		{
 			name: "@storybook/addon-styling",
