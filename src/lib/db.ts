@@ -2,16 +2,16 @@ import { createKysely } from "@vercel/postgres-kysely";
 import { Generated } from "kysely";
 
 export {
-	newRecipe,
-	getRecipeCount,
-	getRecipeFilters,
-	getRecipeById,
+	deleteEmailRecipient,
+	getAllEmailRecipients,
 	getAllRecipes,
 	getLatestRecipes,
+	getRecipeById,
+	getRecipeCount,
+	getRecipeFilters,
 	getRecipesByMeal,
 	newEmailRecipient,
-	getAllEmailRecipients,
-	deleteEmailRecipient,
+	newRecipe,
 };
 
 interface RecipientTable {

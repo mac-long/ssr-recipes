@@ -1,0 +1,63 @@
+import {Meta} from '@storybook/blocks';
+
+<Meta title="Documentation/Introduction" />
+
+# Super Simple Recipes
+
+SSR is a **Super Simple Recipe** blog that utilizes ChatGPT to generate recipes and skips the 4-page story before getting to the instructions. Try making some of these crazy good meals.
+
+This is a fun little app originally intended to learn the Next.js App Router, however I became enamoured with the project and decided to build it into a full application. I ended up learning a lot more than just the App Router.
+
+I call this the buzzword stack and it pretty much uses anything that gets regular coverage in web development media whether that's in [blog posts](https://medium.com/tag/technology), podcasts like [Syntax.fm](https://syntax.fm) or any other online content. Some tools I consider 'Buzzword Stack Worthy' are Storybook, Jest, Next.js, Sentry and OpenAI.
+
+It has been a ridiculously good lesson on hybrid server/client-side rendering. The `use client` notation for files that require reactivity, along with every other file being server-side rendered, makes for some speedy applications. The developer experience is solid too.
+![A great diagram displaying Server and Client Components](https://nextjs.org/_next/image?url=%2Fdocs%2Fdark%2Fthinking-in-server-components.png&w=3840&q=75)
+
+**Get Cooking.**
+
+## Sweet Links
+
+- [Main Site]()
+- [Storybook]()
+
+## Tools
+
+- Next.js + TailwindCSS
+- Vercel Postgres with Kysely
+- Storybook with Chromatic
+- GitHub Actions
+- Typescript
+- OpenAI
+- Rome
+
+## Design System
+
+I chose to create an atomic design system, starting from the tiniest of components named `Atoms`, these can then be utilised together to create `Molecules` which in turn can grow into `Organisms`. Once you have your Organisms you can create Templates which are empty shells for you to insert data into and create Full Pages. [JustInMind](https://www.justinmind.com/blog/atomic-design/) and [Prismic](https://prismic.io/blog/atomic-design-system-example-tutorial#what) have some lovely explanations of this. The idea was originally thought of by [Brad Frost](https://bradfrost.com/blog/post/atomic-web-design/).
+
+## Pain Points
+
+- For future reference fully setup the development enviroment first. I ran into some errors later down the line during my first build of the app, which for now you can view here [recipes_old](https://github.com/mac-long/recipes-old). These errors could have been avoided or at least had a simpler debugging process if I'd built the application properly with Typescript, Storybook Components and Testing rather than trying to add them later on.
+  - On the brightside rebuilding the applciation with these things in place and a clear pathway of where the app is going, has made me realise the use of a lot of tools I had overlooked before.
+- The main reason I had to reset development on the app was translations, I knew it was a feature I wanted to add however didn't think of the best way to structure it to begin with and ended up just building the app. When it came to building the translations out for the app I realised my data was structured in a way that would have required a near complete rebuild of the database.
+
+## Good Notes
+
+- Kysely is a lovely ORM for interfacing with an SQL database in a typesafe manner.
+- Husky formats and lints all code before commiting and checks a conventional commit message format is used.
+- The OpenAI Prompt was fun to craft to a point where it produced not only good recipes, also well structured data without artifacts.
+- Typescript once understood and setup properly does make life a lot easier further down the line.
+  - Completions are very useful.
+  - Errors in the IDE before waiting for pages to load and clicking through or any API calls.
+  - Encourages you to think about all the possible rest that could possible exist for a given component.
+- Chromatic allows for automated snapshot testing which saves developers a whole bunch of time manually opening the application in their browser window, instead they can just check the chromatic url sent to their email or Slack channel and view it like a regular PR.
+- Running tests in GitHub Actions ensures all code is ready to be merged before allowing the main branch to be affected.
+- Rome for Linting and Formatting... This one was a surprise, minimal configuration due to sane defaults, it's also super quick because it's built with rust! This tool runs lint checks on average at `1.236s` and formatting at a ridiculously quick `0.5s`. You can run these tests with the tiny shell script below.
+  - One negative aspect of this is the fact that it's a rather new tool, so certain luxuries I've gotten used to with ESLint and Prettier such as automatic Tailwind Class sorting are duly missed. However the development team have mentions these are likely additions for the future.
+- Utilising HeroIcons and HeroPatterns is very useful.
+
+``` zsh
+for i in `seq 1 5`
+do
+  time pnpm rome format --write ./src
+done
+```
