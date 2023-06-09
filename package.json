@@ -7,7 +7,8 @@
 		"lint": "rome check .",
 		"format": "rome format --write .",
 		"sb": "storybook dev -p 6006",
-		"sb:build": "storybook build"
+		"build-storybook": "storybook build",
+		"chromatic": "pnpx chromatic --exit-zero-on-changes"
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.0.18",
@@ -29,6 +30,7 @@
 		"@storybook/addon-storysource": "^7.0.18",
 		"@storybook/addon-styling": "^1.0.8",
 		"@storybook/blocks": "^7.0.18",
+		"@storybook/jest": "^0.1.0",
 		"@storybook/nextjs": "^7.0.18",
 		"@storybook/react": "^7.0.18",
 		"@storybook/test-runner": "^0.10.0",
