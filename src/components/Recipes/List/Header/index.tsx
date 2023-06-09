@@ -9,8 +9,8 @@ export default function Header({
 	title: string;
 	description: string;
 	filters: {
-		meals: Pick<Database["recipe_translation"], "meal">[];
-		cuisines: Pick<Database["recipe_translation"], "cuisine">[];
+		meals: Pick<Database["recipe_translation"], "meal">["meal"][];
+		cuisines: Pick<Database["recipe_translation"], "cuisine">["cuisine"][];
 	};
 }) {
 	return (
