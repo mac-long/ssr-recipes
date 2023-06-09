@@ -2,7 +2,7 @@
 import { Database } from "@/lib/db";
 import {
 	AdjustmentsVerticalIcon,
-	XCircleIcon
+	XCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
 

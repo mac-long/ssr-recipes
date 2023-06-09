@@ -76,11 +76,7 @@ export default function Share({ options, seperators }: Props) {
 									</a>
 								)}
 								{copy && (
-									<button
-										type="button"
-										onClick={triggerCopy}
-										className="blank"
-									>
+									<button type="button" onClick={triggerCopy} className="blank">
 										{copied ? (
 											<CheckCircleIcon className="text-green-500 animate-fadeIn" />
 										) : (
