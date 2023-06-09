@@ -76,6 +76,10 @@
     }
   }
 
+  textarea {
+    @apply resize-none h-32;
+  }
+
   select {
     @apply appearance-none;
   }
