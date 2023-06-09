@@ -1,15 +1,19 @@
-import Select from "@/components/Forms/Select";
+import Filters from "@/components/Recipes/List/Filters";
 
 export default async function Home() {
 	return (
 		<div className="p-4">
-			<Select
-				name="Wonderful Select"
-				options={[
-					{ name: "Option 1", value: "Value 1" },
-					{ name: "Option 2", value: "Value 2" },
-				]}
-			/>
+			<Filters filters={{ meals: [
+				"Breakfast",
+				"Brunch",
+				"Lunch",
+				"Dinner",
+			], cuisines: [
+				"American",
+				"Chinese",
+				"French",
+				"Indian",
+			] }} />
 		</div>
 	);
 }
