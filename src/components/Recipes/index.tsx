@@ -3,7 +3,7 @@ import RecipeList from "./List";
 import Header from "./List/Header";
 
 export default async function Recipes() {
-	const recipes = await getAllRecipes('en');
+	const recipes = await getAllRecipes("en");
 
 	return (
 		<>

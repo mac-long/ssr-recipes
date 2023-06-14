@@ -4,7 +4,7 @@ import { getRecipeCount } from "@/lib/db";
 import { EnvelopeIcon, FireIcon } from "@heroicons/react/24/outline";
 
 export default async function Header() {
-  const recipeCount = await Number(getRecipeCount());
+	const recipeCount = await Number(getRecipeCount());
 
 	return (
 		<div className="pb-16">
@@ -30,7 +30,6 @@ good meals."
 					{ text: "Categories", count: 10 },
 				]}
 			/>
-
 		</div>
 	);
 }
