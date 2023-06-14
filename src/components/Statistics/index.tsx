@@ -6,7 +6,7 @@ export default function Statistics({
 	return (
 		<dl className="sm:flex sm:justify-center sm:items-center">
 			{statistics.map(({ text, count }: StatisticProps) => (
-				<Statistic text={text} count={count} />
+				<Statistic key={text} text={text} count={count} />
 			))}
 		</dl>
 	);

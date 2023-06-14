@@ -1,61 +1,60 @@
 {
-	"name": "recipes",
-	"version": "0.2.0",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"lint": "rome check .",
-		"format": "rome format --write .",
-		"sb": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
-		"chromatic": "pnpx chromatic --exit-zero-on-changes"
-	},
-	"dependencies": {
-		"@heroicons/react": "^2.0.18",
-		"@vercel/postgres-kysely": "^0.3.0",
-		"chromatic": "^6.17.4",
-		"classnames": "^2.3.2",
-		"kysely": "^0.25.0",
-		"next": "13.4.4",
-		"openai": "^3.2.1",
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
-	},
-	"devDependencies": {
-		"@storybook/addon-a11y": "^7.0.18",
-		"@storybook/addon-actions": "^7.0.20",
-		"@storybook/addon-console": "^2.0.0",
-		"@storybook/addon-docs": "^7.0.18",
-		"@storybook/addon-essentials": "^7.0.18",
-		"@storybook/addon-interactions": "^7.0.18",
-		"@storybook/addon-links": "^7.0.18",
-		"@storybook/addon-mdx-gfm": "^7.0.18",
-		"@storybook/addon-storysource": "^7.0.18",
-		"@storybook/addon-styling": "^1.0.8",
-		"@storybook/blocks": "^7.0.18",
-		"@storybook/jest": "^0.1.0",
-		"@storybook/nextjs": "^7.0.18",
-		"@storybook/react": "^7.0.18",
-		"@storybook/test-runner": "^0.10.0",
-		"@storybook/testing-library": "0.0.14-next.2",
-		"@tailwindcss/typography": "0.5.9",
-		"@types/node": "20.2.5",
-		"@types/react": "18.2.7",
-		"@types/react-dom": "18.2.4",
-		"autoprefixer": "10.4.14",
-		"husky": "^8.0.0",
-		"postcss": "8.4.24",
-		"rome": "^12.1.2",
-		"storybook": "^7.0.18",
-		"storybook-mobile": "^1.0.1",
-		"tailwindcss": "3.3.2",
-		"typescript": "5.0.4"
-	},
-	"postcss": {
-		"plugins": {
-			"tailwindcss/nesting": {},
-			"tailwindcss": {},
-			"autoprefixer": {}
-		}
-	}
+  "name": "recipes",
+  "version": "0.2.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "rome check .",
+    "format": "rome format --write .",
+    "sb": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "pnpx chromatic --exit-zero-on-changes"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@vercel/postgres-kysely": "^0.3.0",
+    "chromatic": "^6.17.4",
+    "classnames": "^2.3.2",
+    "kysely": "^0.25.0",
+    "next": "13.4.4",
+    "openai": "^3.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^7.0.18",
+    "@storybook/addon-actions": "^7.0.20",
+    "@storybook/addon-console": "^2.0.0",
+    "@storybook/addon-docs": "^7.0.18",
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/addon-storysource": "^7.0.18",
+    "@storybook/addon-styling": "^1.0.8",
+    "@storybook/blocks": "^7.0.18",
+    "@storybook/jest": "^0.1.0",
+    "@storybook/nextjs": "^7.0.18",
+    "@storybook/react": "^7.0.18",
+    "@storybook/test-runner": "^0.10.0",
+    "@storybook/testing-library": "0.0.14-next.2",
+    "@tailwindcss/typography": "0.5.9",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "husky": "^8.0.0",
+    "postcss": "8.4.24",
+    "rome": "^12.1.2",
+    "storybook": "^7.0.18",
+    "storybook-mobile": "^1.0.1",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss/nesting": {},
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  }
 }

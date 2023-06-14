@@ -11,7 +11,7 @@ export {
 	getRecipeFilters,
 	getRecipesByMeal,
 	newEmailRecipient,
-	newRecipe,
+	newRecipe
 };
 
 interface RecipientTable {

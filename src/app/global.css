@@ -99,7 +99,7 @@
   }
 
   .tag {
-    @apply inline-flex items-center space-x-1.5 p-2 rounded-full text-xs font-semibold bg-slate-300 text-slate-800 z-10;
+    @apply inline-flex items-center space-x-1.5 p-2 rounded-full text-xs font-semibold bg-slate-300 text-slate-800 z-10 no-underline;
     @apply hover:bg-teal-600 hover:text-slate-800;
   }
 }
