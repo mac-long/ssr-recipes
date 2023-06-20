@@ -1,6 +1,7 @@
 "use client";
 import {
 	AdjustmentsVerticalIcon,
+	MagnifyingGlassIcon,
 	XCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
@@ -38,9 +39,10 @@ export default function Filters({
 					</select>
 				</div>
 			</div>
-			<div className="flex justify-between items-center min-w-full border-b-2 sm:pt-4 border-slate-900 focus-within:border-teal-500">
+			<div className="flex justify-between items-center min-w-full border-b-2 border-slate-900 focus-within:border-teal-500">
+				<MagnifyingGlassIcon className="w-5 h-5" />
 				<input
-					className="rounded-t-none border-0 ring-0 shadow-none search border-x-0"
+					className="peer search"
 					type="text"
 					name="query"
 					value={query}

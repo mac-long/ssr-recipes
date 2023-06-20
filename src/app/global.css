@@ -72,7 +72,7 @@
     @apply focus:ring-teal-400 focus:ring-2 focus:invalid:ring-red-500;
 
     &.search {
-      @apply py-1.5 pl-1 w-full text-gray-900 bg-transparent sm:text-sm focus:ring-0 placeholder:text-gray-400;
+      @apply rounded-t-none border-0 ring-0 shadow-none border-x-0 pl-1 m-0 w-full text-gray-900 bg-transparent sm:text-sm focus:ring-0 placeholder:text-gray-400;
     }
   }
 
@@ -81,7 +81,7 @@
   }
 
   select {
-    @apply appearance-none bg-transparent p-1 text-slate-900 ring-slate-900 h-auto w-auto;
+    @apply appearance-none bg-transparent px-2 py-1 text-slate-900 m-0 ring-0 border-[1.5px] border-slate-900 h-auto w-auto focus:ring-0 focus:border-teal-500;
   }
 }
 

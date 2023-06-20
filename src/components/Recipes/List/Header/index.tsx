@@ -13,7 +13,7 @@ export default function Header({
 	};
 }) {
 	return (
-		<div className="px-6">
+		<div className="px-6 mb-8">
 			<div className="pb-2 sm:pb-4">
 				<h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900">
 					{title}.
