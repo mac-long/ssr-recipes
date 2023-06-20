@@ -1,5 +1,4 @@
 "use client";
-import { Database } from "@/lib/db";
 import {
 	AdjustmentsVerticalIcon,
 	XCircleIcon,
@@ -10,8 +9,8 @@ export default function Filters({
 	filters,
 }: {
 	filters: {
-		meals: Pick<Database["recipe_translation"], "meal">[];
-		cuisines: Pick<Database["recipe_translation"], "cuisine">[];
+		meals: string[];
+		cuisines: string[];
 	};
 }) {
 	const [query, setQuery] = useState<string>("");
@@ -22,24 +21,20 @@ export default function Filters({
 				<AdjustmentsVerticalIcon className="w-5 h-5" /> <span>Filters</span>
 			</h3>
 			<div className="flex items-start space-x-4">
-				{/*<Select*/}
-				{/*  name="Meal"*/}
-				{/*  options={filters.meals.map((meal) => ({*/}
-				{/*    name: String(meal),*/}
-				{/*    value: String(meal),*/}
-				{/*  }))}*/}
-				{/*/>*/}
-				{/*<Select*/}
-				{/*  name="Cuisine"*/}
-				{/*  options={filters.cuisines.map((cuisine) => ({*/}
-				{/*    name: String(cuisine),*/}
-				{/*    value: String(cuisine),*/}
-				{/*  }))}*/}
-				{/*/>*/}
+				<select id="Meal" name="Meal">
+					{filters.meals.map((meal) => (
+						<option value={meal}>{meal}</option>
+					))}
+				</select>
+				<select id="Cuisine" name="Cuisine">
+					{filters.cuisines.map((cuisine) => (
+						<option value={cuisine}>{cuisine}</option>
+					))}
+				</select>
 			</div>
-			<div className="flex justify-between items-center min-w-full border-b-2 sm:pt-4 border-slate-900">
+			<div className="flex justify-between items-center min-w-full border-b-2 sm:pt-4 border-slate-900 focus-within:border-teal-500">
 				<input
-					className="rounded-t-none border-0 border-teal-900 ring-0 shadow-none search border-x-0"
+					className="rounded-t-none border-0 ring-0 shadow-none search border-x-0"
 					type="text"
 					name="query"
 					value={query}
