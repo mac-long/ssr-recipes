@@ -21,16 +21,22 @@ export default function Filters({
 				<AdjustmentsVerticalIcon className="w-5 h-5" /> <span>Filters</span>
 			</h3>
 			<div className="flex items-start space-x-4">
-				<select id="Meal" name="Meal">
-					{filters.meals.map((meal) => (
-						<option value={meal}>{meal}</option>
-					))}
-				</select>
-				<select id="Cuisine" name="Cuisine">
-					{filters.cuisines.map((cuisine) => (
-						<option value={cuisine}>{cuisine}</option>
-					))}
-				</select>
+				<div className="flex flex-col items-start justify-center">
+					<p className="font-bold m-0">Meal</p>
+					<select id="Meal" name="Meal">
+						{filters.meals.map((meal) => (
+							<option value={meal}>{meal}</option>
+						))}
+					</select>
+				</div>
+				<div className="flex flex-col items-start">
+					<p className="font-bold m-0">Cuisine</p>
+					<select id="Cuisine" name="Cuisine">
+						{filters.cuisines.map((cuisine) => (
+							<option value={cuisine}>{cuisine}</option>
+						))}
+					</select>
+				</div>
 			</div>
 			<div className="flex justify-between items-center min-w-full border-b-2 sm:pt-4 border-slate-900 focus-within:border-teal-500">
 				<input
@@ -39,7 +45,7 @@ export default function Filters({
 					name="query"
 					value={query}
 					onChange={(e) => setQuery(e.target.value)}
-					placeholder="Enter a recipe title..."
+					placeholder="Enter a recipe title to search..."
 				/>
 				{query?.length > 0 && (
 					<XCircleIcon

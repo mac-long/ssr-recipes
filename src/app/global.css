@@ -81,7 +81,7 @@
   }
 
   select {
-    @apply appearance-none;
+    @apply appearance-none bg-transparent p-1 text-slate-900 ring-slate-900 h-auto w-auto;
   }
 }
 

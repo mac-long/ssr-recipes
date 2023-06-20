@@ -1,4 +1,3 @@
-import { Database } from "@/lib/db";
 import Filters from "../Filters";
 
 export default function Header({
@@ -9,8 +8,8 @@ export default function Header({
 	title: string;
 	description: string;
 	filters: {
-		meals: Pick<Database["recipe_translation"], "meal">[];
-		cuisines: Pick<Database["recipe_translation"], "cuisine">[];
+		meals: string[];
+		cuisines: string[];
 	};
 }) {
 	return (

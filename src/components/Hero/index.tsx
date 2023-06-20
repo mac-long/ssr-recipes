@@ -12,7 +12,7 @@ interface Props {
 
 export default function Hero({ title, description, buttons }: Props) {
 	return (
-		<div className="relative px-6 pt-28 pb-40 lg:px-8 isolate animate-fadeIn">
+		<div className="relative px-6 pt-28 lg:px-8 isolate animate-fadeIn">
 			<HeroGradient />
 			<div className="py-32 mx-auto sm:py-48 lg:py-56 sm:max-w-lg">
 				<div className="text-center">
