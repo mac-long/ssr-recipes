@@ -1,10 +1,6 @@
-import { getAllRecipes } from "@/lib/db";
-import RecipeList from "./List";
 import Header from "./List/Header";
 
 export default async function Recipes() {
-	const recipes = await getAllRecipes("en");
-
 	return (
 		<section id="recipes">
 			<Header
@@ -15,7 +11,7 @@ export default async function Recipes() {
 					cuisines: ["American", "Chinese", "French", "Indian", "Italian"],
 				}}
 			/>
-			<RecipeList recipes={recipes} />
+			{/* <RecipeList recipes={recipes} /> */}
 		</section>
 	);
 }
