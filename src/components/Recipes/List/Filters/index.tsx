@@ -26,7 +26,9 @@ export default function Filters({
 					<p className="font-bold m-0">Meal</p>
 					<select id="Meal" name="Meal">
 						{filters.meals.map((meal) => (
-							<option value={meal}>{meal}</option>
+							<option key={meal} value={meal}>
+								{meal}
+							</option>
 						))}
 					</select>
 				</div>
@@ -34,7 +36,9 @@ export default function Filters({
 					<p className="font-bold m-0">Cuisine</p>
 					<select id="Cuisine" name="Cuisine">
 						{filters.cuisines.map((cuisine) => (
-							<option value={cuisine}>{cuisine}</option>
+							<option key={cuisine} value={cuisine}>
+								{cuisine}
+							</option>
 						))}
 					</select>
 				</div>

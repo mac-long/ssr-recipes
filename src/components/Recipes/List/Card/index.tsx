@@ -18,8 +18,16 @@ export default function RecipeCard({
 
 	return (
 		<Link href={`/recipes/${id}`} passHref className="no-underline">
-			<div className="flex flex-row-reverse justify-between p-10 rounded-md shadow-md cursor-pointer hover:bg-gray-200 group">
-				<div className="flex flex-col justify-between items-end text-xs">
+			<div className="my-4 flex justify-between p-5 h-[150px] rounded-md shadow-md cursor-pointer hover:bg-gray-200 group">
+				<div className="h-full flex flex-col justify-between">
+					<h3 className="m-0 text-2xl font-semibold group-hover:text-teal-600">
+						{title}
+					</h3>
+					<p className="max-w-sm m-0 text-xs leading-6 text-slate-600">
+						<span>{summary}</span>
+					</p>
+				</div>
+				<div className="flex flex-col space-y-2 items-end justify-between text-xs">
 					<time dateTime={dateString} className="text-slate-500">
 						{dateString}
 					</time>
@@ -31,14 +39,6 @@ export default function RecipeCard({
 							{cuisine}
 						</Link>
 					</div>
-				</div>
-				<div>
-					<h3 className="mb-2 text-lg font-semibold group-hover:text-teal-600">
-						{title}
-					</h3>
-					<p className="max-w-sm text-xs leading-6 text-slate-600">
-						<span>{summary}</span>
-					</p>
 				</div>
 			</div>
 		</Link>

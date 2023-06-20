@@ -7,7 +7,7 @@ export default async function Header() {
 	const recipeCount = await Number(getRecipeCount());
 
 	return (
-		<div className="min-h-screen bg-white">
+		<div className="min-h-screen">
 			<Hero
 				title="Fun Recipes to Try at Home."
 				description="SSR is a super simple recipe blog that skips out on the 4 page story
