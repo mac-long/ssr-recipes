@@ -14,7 +14,7 @@ export default function RecipeList({
 				<div className="grid grid-cols-1 gap-x-8 pt-10 mx-auto space-y-4 max-w-2xl md:gap-y-8 md:space-y-0 lg:grid-cols-3 lg:mx-0 lg:max-w-none">
 					{recipes.map((recipe) => (
 						// @ts-ignore
-						<RecipeCard {...recipe} />
+						<RecipeCard key={recipe.id} {...recipe} />
 					))}
 				</div>
 			) : (
