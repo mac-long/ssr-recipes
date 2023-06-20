@@ -23,7 +23,7 @@ const features = [
 
 export default function Footer() {
 	return (
-		<footer id="contact" className="m-0 mt-10">
+		<footer id="newsletter" className="m-0 mt-10">
 			<div className="overflow-hidden relative py-16 bg-gray-900 sm:py-24 lg:py-32 isolate">
 				<div className="px-6 mx-auto max-w-7xl lg:px-8">
 					<div className="grid grid-cols-1 gap-x-8 gap-y-16 mx-auto max-w-2xl sm:gap-y-8 lg:max-w-none">

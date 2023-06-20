@@ -14,7 +14,7 @@ export default async function Header() {
 before getting to the instructions, try making some of these crazy
 good meals."
 				buttons={[
-					{ label: "Subscribe", href: "#footer", icon: <EnvelopeIcon /> },
+					{ label: "Subscribe", href: "#newsletter", icon: <EnvelopeIcon /> },
 					{
 						label: "Get Cooking",
 						href: "#recipes",

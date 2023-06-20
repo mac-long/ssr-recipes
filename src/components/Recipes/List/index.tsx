@@ -9,7 +9,7 @@ export default function RecipeList({
 		Omit<Database["recipe_translation"], "id">[];
 }) {
 	return (
-		<div className="px-6 mx-auto max-w-7xl">
+		<div id="recipes" className="px-6 mx-auto max-w-7xl">
 			{recipes.length > 0 ? (
 				<>
 					{recipes.map((recipe) => (

@@ -6,7 +6,7 @@ export default async function Recipes() {
 	const recipes = await getAllRecipes("en");
 
 	return (
-		<>
+		<section id="recipes">
 			<Header
 				title="Recipes"
 				description="Enjoy searching through our crazy assortment of cuisine from around the world."
@@ -16,6 +16,6 @@ export default async function Recipes() {
 				}}
 			/>
 			<RecipeList recipes={recipes} />
-		</>
+		</section>
 	);
 }
