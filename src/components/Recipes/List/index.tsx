@@ -1,7 +1,7 @@
 //@ts-nocheck
-import RecipeCard from "@/components/Recipes/List/Card";
 import { Database } from "@/lib/db";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
+import RecipeCard from "./Card";
 
 export default function RecipeList({
 	recipes,

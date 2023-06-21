@@ -14,7 +14,7 @@ export default function RecipeCard({
 		Database["recipe_translation"],
 		"cuisine" | "meal" | "title" | "summary"
 	>) {
-	const dateString = new Date(created_on).toLocaleDateString();
+	const dateString = new Date(created_on).toDateString();
 
 	return (
 		<Link href={`/recipes/${id}`} passHref className="no-underline">
@@ -32,12 +32,8 @@ export default function RecipeCard({
 						{dateString}
 					</time>
 					<div className="flex justify-center space-x-1">
-						<Link href={`/recipes/${meal}`} className="tag">
-							{meal}
-						</Link>
-						<Link href={`/recipes/${cuisine}`} className="tag">
-							{cuisine}
-						</Link>
+						<div className="tag">{meal}</div>
+						<div className="tag">{cuisine}</div>
 					</div>
 				</div>
 			</div>
