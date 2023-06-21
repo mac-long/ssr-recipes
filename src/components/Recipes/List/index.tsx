@@ -11,22 +11,23 @@ export default function RecipeList({
 		Omit<Database["recipe_translation"], "id">[];
 	currentFilters: object;
 }) {
+	const filteredRecipes = recipes.filter((recipe) => {
+		const { meal, cuisine, query } = currentFilters;
+		return (
+			(meal === "All" || recipe.meal === meal) &&
+			(cuisine === "All" || recipe.cuisine === cuisine) &&
+			(query === "" ||
+				recipe.title?.toLowerCase().includes(query.toLowerCase()))
+		);
+	});
+
 	return (
-		<div id="recipes" className="mx-auto max-w-7xl">
-			{recipes.length > 0 ? (
+		<div id="recipes" className="mx-auto max-w-7xl pt-8">
+			{filteredRecipes.length > 0 ? (
 				<>
-					{recipes
-						.filter((recipe) => {
-							const { meal, cuisine, query } = currentFilters;
-							return (
-								(meal === "All" || recipe.meal === meal) &&
-								(cuisine === "All" || recipe.cuisine === cuisine) &&
-								(query === "" || recipe.title?.toLowerCase().includes(query.toLowerCase()))
-							);
-						})
-						.map((recipe) => (
-							<RecipeCard key={recipe.id} {...recipe} />
-						))}
+					{filteredRecipes.map((recipe) => (
+						<RecipeCard key={recipe.id} {...recipe} />
+					))}
 				</>
 			) : (
 				<div className="flex flex-col items-center text-center">
