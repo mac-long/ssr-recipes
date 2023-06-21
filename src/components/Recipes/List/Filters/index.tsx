@@ -1,30 +1,35 @@
+//@ts-nocheck
 "use client";
 import {
 	AdjustmentsVerticalIcon,
 	MagnifyingGlassIcon,
 	XCircleIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
 import Filter from "./Filter";
 
 export default function Filters({
 	filters,
-}: {
-	filters: {
-		meals: string[];
-		cuisines: string[];
-	};
+	currentFilters,
+	setCurrentFilters,
 }) {
-	const [query, setQuery] = useState("");
-
 	return (
 		<div className="space-y-2 w-full">
 			<h3 className="flex items-center m-0 space-x-0.5 font-bold">
 				<AdjustmentsVerticalIcon className="w-5 h-5" /> <span>Filters</span>
 			</h3>
 			<div className="flex items-start space-x-4">
-				<Filter name="Meal" filters={filters.meals} />
-				<Filter name="Cuisine" filters={filters.cuisines} />
+				<Filter
+					name="Meal"
+					filters={filters.meals}
+					currentFilters={currentFilters}
+					setCurrentFilters={setCurrentFilters}
+				/>
+				<Filter
+					name="Cuisine"
+					filters={filters.cuisines}
+					currentFilters={currentFilters}
+					setCurrentFilters={setCurrentFilters}
+				/>
 			</div>
 			<div className="flex justify-between items-center min-w-full border-b-2 border-slate-900 focus-within:border-teal-500">
 				<MagnifyingGlassIcon className="w-5 h-5" />
@@ -32,14 +37,16 @@ export default function Filters({
 					className="peer search"
 					type="text"
 					name="query"
-					value={query}
-					onChange={(e) => setQuery(e.target.value)}
+					value={currentFilters.query}
+					onChange={(e) =>
+						setCurrentFilters({ ...currentFilters, query: e.target.value })
+					}
 					placeholder="Enter a recipe title to search..."
 				/>
-				{query?.length > 0 && (
+				{currentFilters.query?.length > 0 && (
 					<XCircleIcon
 						className="ml-2 w-5 h-5 text-gray-400 cursor-pointer"
-						onClick={() => setQuery("")}
+						onClick={() => setCurrentFilters({ ...currentFilters, query: "" })}
 					/>
 				)}
 			</div>

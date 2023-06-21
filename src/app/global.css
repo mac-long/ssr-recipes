@@ -25,7 +25,7 @@
     @apply flex items-center space-x-2;
     @apply shadow-sm rounded-md text-sm font-semibold bg-slate-900 text-slate-100;
     @apply transition-colors duration-300;
-    @apply px-3.5 py-2;
+    @apply px-3.5 py-2.5 h-11;
     @apply hover:bg-slate-700;
     @apply dark:bg-slate-100 dark:text-gray-900;
     @apply hover:dark:bg-slate-300;
@@ -67,9 +67,9 @@
   select {
     @apply px-3 py-2.5 w-52 h-11 mt-1.5;
     @apply text-sm text-white/95 bg-gray-900/95 font-normal placeholder:font-normal;
-    @apply rounded-md outline outline-0 border-2 border-transparent ring-2 ring-teal-700;
+    @apply rounded-md outline-none border-none ring-2 ring-teal-700;
     @apply transition-colors duration-300;
-    @apply focus:ring-teal-400 focus:ring-2 focus:invalid:ring-red-500;
+    @apply focus:ring-teal-500 focus:invalid:ring-red-500;
 
     &.search {
       @apply rounded-t-none border-0 ring-0 shadow-none border-x-0 pl-1 m-0 w-full text-gray-900 bg-transparent sm:text-sm focus:ring-0 placeholder:text-gray-400;
@@ -81,7 +81,7 @@
   }
 
   select {
-    @apply appearance-none bg-transparent px-2 py-1 text-slate-900 m-0 ring-0 border-[1.5px] border-slate-900 h-auto w-auto focus:ring-0 focus:border-teal-500;
+    @apply appearance-none bg-transparent px-2 py-1 text-slate-900 m-0 border-[1.5px] border-slate-900 h-auto w-auto focus:border-teal-500;
   }
 }
 
