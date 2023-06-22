@@ -25,6 +25,11 @@ export default {
 				created_on: "2021-08-02T00:00:00.000Z",
 			},
 		],
+		currentFilters: {
+			meal: "All",
+			cuisine: "All",
+			query: "",
+		}
 	},
 	tags: ["autodocs"],
 } as Meta;
