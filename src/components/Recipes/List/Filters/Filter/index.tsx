@@ -17,7 +17,8 @@ export default function Filter({
 }) {
 	return (
 		<div className="flex flex-col items-start">
-			<label htmlFor={name} className="font-bold m-0">Meal
+			<label htmlFor={name} className="font-bold m-0">
+				{name}
 				<select
 					id={name}
 					name={name}
