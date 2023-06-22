@@ -8,6 +8,9 @@ dependencies:
   '@heroicons/react':
     specifier: ^2.0.18
     version: 2.0.18(react@18.2.0)
+  '@vercel/analytics':
+    specifier: ^1.0.1
+    version: 1.0.1
   '@vercel/postgres-kysely':
     specifier: ^0.3.0
     version: 0.3.0(kysely@0.25.0)
@@ -5424,6 +5427,10 @@ packages:
     dependencies:
       '@types/yargs-parser': 21.0.0
     dev: true
+
+  /@vercel/analytics@1.0.1:
+    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+    dev: false
 
   /@vercel/postgres-kysely@0.3.0(kysely@0.25.0):
     resolution: {integrity: sha512-HN/DEZTnb9jje8jHD2YwH/zl1MgvU2CuTb8J+NDFcg4WUNFQjHAl7KxWXcvO+/QKuhdesvpR9GHy35NbtHdr2w==}

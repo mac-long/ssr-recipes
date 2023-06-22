@@ -1,4 +1,5 @@
 import Footer from "@/components/Layout/Footer";
+import { Analytics } from '@vercel/analytics/react';
 import Script from "next/script";
 import "./global.css";
 
@@ -19,6 +20,7 @@ export default function RootLayout({
 				<main className="mx-auto min-h-screen prose">{children}</main>
 				<Footer />
 			</body>
+			<Analytics />
 		</html>
 	);
 }
