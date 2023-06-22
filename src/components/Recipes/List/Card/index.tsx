@@ -23,7 +23,7 @@ export default function RecipeCard({
 						{title}
 					</h3>
 					<p className="max-w-sm m-0 text-xs leading-6 text-slate-600">
-						<span>{summary}</span>
+						<span>{summary.slice(0,46)}...</span>
 					</p>
 				</div>
 				<div className="flex flex-col space-y-2 items-end justify-between text-xs">

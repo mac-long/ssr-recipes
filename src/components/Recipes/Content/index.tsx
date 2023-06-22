@@ -56,8 +56,7 @@ export default function Content({
 				</div>
 				<div className="p-12 -mt-12 -ml-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 animate-slideRight">
 					<Image
-						className="max-w-none bg-gray-900 rounded-xl ring-1 shadow-2xl sm:max-w-2xl w-[64rem] ring-gray-400/10"
-						style={{ width: "auto", height: "auto" }}
+						className="max-w-none h-auto bg-gray-900 rounded-xl ring-1 shadow-2xl sm:max-w-2xl w-[64rem] ring-gray-400/10"
 						src={image.url}
 						alt={`${title} a food for ${meal}.`}
 						width={1024}

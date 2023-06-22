@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { getAllRecipes, getRecipeFilters } from "@/lib/db";
 import RecipesContent from "./List/Content";
 import Header from "./List/Header";

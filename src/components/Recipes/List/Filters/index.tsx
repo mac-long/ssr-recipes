@@ -1,5 +1,5 @@
 "use client";
-import { RecipeTranslationTable } from "@/lib/db";
+import { RecipeTranslationTable, SetCurrentFilters } from "@/lib/db";
 import {
 	AdjustmentsVerticalIcon,
 	MagnifyingGlassIcon,
@@ -13,21 +13,15 @@ export default function Filters({
 	setCurrentFilters,
 }: {
 	filters: {
-		meals: RecipeTranslationTable["meal"];
-		cuisines: RecipeTranslationTable["cuisine"];
+		meals: RecipeTranslationTable["meal"][];
+		cuisines: RecipeTranslationTable["cuisine"][];
 	};
 	currentFilters: {
 		meal: RecipeTranslationTable["meal"];
 		cuisine: RecipeTranslationTable["cuisine"];
 		query: string;
 	};
-	setCurrentFilters: React.Dispatch<
-		React.SetStateAction<{
-			meal: RecipeTranslationTable["meal"];
-			cuisine: RecipeTranslationTable["cuisine"];
-			query: string;
-		}>
-	>;
+	setCurrentFilters: SetCurrentFilters;
 }) {
 	return (
 		<div className="space-y-2 w-full">

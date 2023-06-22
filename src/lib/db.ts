@@ -52,6 +52,12 @@ export interface Database {
 	recipe_translation: RecipeTranslationTable;
 }
 
+export type SetCurrentFilters = (filters: {
+	meal: RecipeTranslationTable["meal"];
+	cuisine: RecipeTranslationTable["cuisine"];
+	query: string;
+}) => void;
+
 const db = createKysely<Database>();
 const { countAll } = db.fn;
 
