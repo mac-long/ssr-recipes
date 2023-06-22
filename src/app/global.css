@@ -31,7 +31,7 @@
     @apply hover:dark:bg-slate-300;
 
     &.primary {
-      @apply bg-teal-600;
+      @apply bg-teal-700;
       @apply hover:bg-teal-800;
       @apply dark:bg-teal-800 text-slate-100;
       @apply hover:dark:bg-teal-700;
