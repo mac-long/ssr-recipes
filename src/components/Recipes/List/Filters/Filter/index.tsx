@@ -17,23 +17,24 @@ export default function Filter({
 }) {
 	return (
 		<div className="flex flex-col items-start">
-			<p className="font-bold m-0">Meal</p>
-			<select
-				id={name}
-				name={name}
-				onChange={(e) =>
-					setCurrentFilters({
-						...currentFilters,
-						[name.toLowerCase()]: e.target.value,
-					})
-				}
-			>
-				{["All", ...filters].map((item) => (
-					<option key={item} value={item}>
-						{item}
-					</option>
-				))}
-			</select>
+			<label htmlFor={name} className="font-bold m-0">Meal
+				<select
+					id={name}
+					name={name}
+					onChange={(e) =>
+						setCurrentFilters({
+							...currentFilters,
+							[name.toLowerCase()]: e.target.value,
+						})
+					}
+				>
+					{["All", ...filters].map((item) => (
+						<option key={item} value={item}>
+							{item}
+						</option>
+					))}
+				</select>
+			</label>
 		</div>
 	);
 }
