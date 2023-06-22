@@ -1,4 +1,5 @@
-import { Database } from "@/lib/db";
+//@ts-nocheck
+import { Database, RecipeTranslationTable } from "@/lib/db";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import RecipeCard from "./Card";
 
@@ -8,7 +9,7 @@ export default function RecipeList({
 }: {
 	recipes: (Omit<Database["recipe"], "image" | "creation_time"> &
 		Omit<Database["recipe_translation"], "id">)[];
-	currentFilters: any;
+	currentFilters: RecipeTranslationTable["meal" | "cuisine"];
 }) {
 	const filteredRecipes = recipes.filter((recipe) => {
 		return (
@@ -27,7 +28,7 @@ export default function RecipeList({
 			{filteredRecipes.length > 0 ? (
 				<>
 					{filteredRecipes.map((recipe) => (
-						<RecipeCard key={recipe.id} {...recipe} />
+						<RecipeCard key={Number(recipe.id)} {...recipe} />
 					))}
 				</>
 			) : (

@@ -31,10 +31,10 @@ interface RecipeTable {
 			url: string;
 		};
 	};
-	created_on: Generated<Date>;
+	created_on: Date;
 }
 
-interface RecipeTranslationTable {
+export interface RecipeTranslationTable {
 	id: Generated<number>;
 	recipe_id: number;
 	language_code: string;

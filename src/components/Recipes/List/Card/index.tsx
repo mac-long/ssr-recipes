@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { Database } from "@/lib/db";
 import Link from "next/link";
 

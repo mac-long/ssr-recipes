@@ -1,4 +1,4 @@
-//@ts-nocheck
+//@ts-nocheck ! issue with Next.js 13
 import Header from "@/components/Layout/Header";
 import Recipes from "@/components/Recipes/index";
 
