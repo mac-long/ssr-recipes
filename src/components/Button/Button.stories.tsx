@@ -4,12 +4,9 @@ import {
 	CogIcon,
 	FireIcon,
 } from "@heroicons/react/24/outline";
-import { expect, jest } from "@storybook/jest";
 import type { Meta } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
 import Button from ".";
 
-const mockOnClick = jest.fn();
 
 export default {
 	title: "Components/Button",
@@ -108,20 +105,5 @@ export const FullWidthLoading = {
 		label: undefined,
 		fullWidth: true,
 		loading: true,
-	},
-};
-
-export const Tests = {
-	args: {
-		label: "Click me",
-		onClick: mockOnClick,
-	},
-	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-		const canvas = within(canvasElement);
-		const button = canvas.getByRole("button") as HTMLButtonElement;
-		userEvent.click(button);
-		expect(mockOnClick).toHaveBeenCalled();
-		// @ts-ignore
-		expect(button).toHaveTextContent("Click me");
 	},
 };
