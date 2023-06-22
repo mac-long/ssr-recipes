@@ -1,4 +1,4 @@
-//@ts-nocheck
+//@ts-nochec
 "use client";
 import { useState } from "react";
 import RecipeList from "..";

@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { Database } from "@/lib/db";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import RecipeCard from "./Card";
@@ -7,17 +6,19 @@ export default function RecipeList({
 	recipes,
 	currentFilters,
 }: {
-	recipes: Omit<Database["recipe"], "image" | "creation_time">[] &
-		Omit<Database["recipe_translation"], "id">[];
-	currentFilters: object;
+	recipes: (Omit<Database["recipe"], "image" | "creation_time"> &
+		Omit<Database["recipe_translation"], "id">)[];
+	currentFilters: any;
 }) {
 	const filteredRecipes = recipes.filter((recipe) => {
-		const { meal, cuisine, query } = currentFilters;
 		return (
-			(meal === "All" || recipe.meal === meal) &&
-			(cuisine === "All" || recipe.cuisine === cuisine) &&
-			(query === "" ||
-				recipe.title?.toLowerCase().includes(query.toLowerCase()))
+			(currentFilters.meal === "All" || recipe.meal === currentFilters.meal) &&
+			(currentFilters.cuisine === "All" ||
+				recipe.cuisine === currentFilters.cuisine) &&
+			(currentFilters.query === "" ||
+				recipe.title
+					?.toLowerCase()
+					.includes(currentFilters.query.toLowerCase()))
 		);
 	});
 
