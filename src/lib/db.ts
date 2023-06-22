@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { createKysely } from "@vercel/postgres-kysely";
 import { Generated } from "kysely";
 
