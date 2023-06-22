@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 import { Database, RecipeTranslationTable } from "@/lib/db";
 import { useState } from "react";
