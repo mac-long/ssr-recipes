@@ -48,13 +48,13 @@ export default function Filters({
 					className="peer search"
 					type="text"
 					name="query"
-					value={currentFilters.query}
+					value={currentFilters?.query}
 					onChange={(e) =>
 						setCurrentFilters({ ...currentFilters, query: e.target.value })
 					}
 					placeholder="Enter a recipe title to search..."
 				/>
-				{currentFilters.query?.length > 0 && (
+				{currentFilters?.query !== "" && (
 					<XCircleIcon
 						className="ml-2 w-5 h-5 text-gray-400 cursor-pointer"
 						onClick={() => setCurrentFilters({ ...currentFilters, query: "" })}
