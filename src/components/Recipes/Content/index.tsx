@@ -23,26 +23,28 @@ export default async function RecipeContent({ id }: {
 						<div className="lg:max-w-lg">
 							<div className="flex items-start space-x-3 font-bold tracking-tight relative -ml-12 max-w-lg">
 								<Link href="/#recipes" aria-label="Back to all recipes">
-									<ArrowLeftIcon className="w-8 h-8" />
+									<ArrowLeftIcon className="relative left-12 -top-16 sm:static w-8 h-8" />
 								</Link>
 								<h1 className="text-6xl m-0">{title}</h1>
-								<div className="flex-1 flex-grow"/>
-								<Share
-									options={[
-										{
-											id: 1,
-											icon: <EnvelopeIcon />,
-											message: "Check out this awesome recipe I found on SSR",
-											href: "mailto:testing123",
-										},
-										{
-											id: 2,
-											icon: <DevicePhoneMobileIcon />,
-											message: "Check out this awesome recipe I found on SSR",
-											href: "sms:&body=wonderfulawesomeness.",
-										},
-									]}
-								/>
+								<div className="flex-1 flex-grow" />
+								<div className="absolute -top-16 right-0 sm:static">
+									<Share
+										options={[
+											{
+												id: 1,
+												icon: <EnvelopeIcon />,
+												message: "Check out this awesome recipe I found on SSR",
+												href: "mailto:testing123",
+											},
+											{
+												id: 2,
+												icon: <DevicePhoneMobileIcon />,
+												message: "Check out this awesome recipe I found on SSR",
+												href: "sms:&body=wonderfulawesomeness.",
+											},
+										]}
+									/>
+								</div>
 							</div>
 							<p className="mt-6 text-xl leading-8">{summary}</p>
 							<Ingredients ingredients={ingredients} />
