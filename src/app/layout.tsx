@@ -1,6 +1,5 @@
 import Footer from "@/components/Layout/Footer";
 import { Analytics } from '@vercel/analytics/react';
-import Script from "next/script";
 import "./global.css";
 
 export const metadata = {
@@ -15,7 +14,6 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<Script src="http://localhost:8097" />
 			<body className="scroll-smooth">
 				<main>{children}</main>
 				<Footer />
