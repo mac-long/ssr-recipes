@@ -27,7 +27,7 @@ export default function RecipeCard({
 					</p>
 				</div>
 				<div className="flex flex-col space-y-2 items-end justify-between text-xs">
-					<time dateTime={dateString} className="text-slate-500">
+					<time dateTime={dateString} className="text-slate-600">
 						{dateString}
 					</time>
 					<div className="flex justify-center space-x-1">
