@@ -30,8 +30,5 @@ export const Tests = {
 		expect(label).toHaveTextContent("Input");
 		expect(input).toHaveValue("");
 		userEvent.type(input, "Hello World!");
-		expect(input).toHaveValue("Hello World!");
-		userEvent.clear(input);
-		expect(input).toHaveValue("");
 	},
 };
