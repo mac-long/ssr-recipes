@@ -13,7 +13,7 @@ export default function Feature({ icon, name, description }: Props) {
 				</div>
 				<h3 className="text-white">{name}</h3>
 			</dt>
-			<dd className="mt-2 text-base leading-7 text-slate-700">{description}</dd>
+			<dd className="mt-2 text-base leading-7 text-slate-500">{description}</dd>
 		</div>
 	);
 }
