@@ -29,7 +29,7 @@ export default function RecipeList({
 	});
 
 	return (
-		<div id="recipes" className="mx-auto max-w-7xl pt-8">
+		<div id="recipes" className="mx-auto max-w-7xl pt-8 min-h-[200px]">
 			{filteredRecipes.length > 0 ? (
 				<>
 					{filteredRecipes.map((recipe) => (
