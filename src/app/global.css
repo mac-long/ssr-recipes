@@ -9,7 +9,7 @@
   }
 
   main {
-    @apply prose;
+    @apply min-h-screen prose;
   }
 
   a {

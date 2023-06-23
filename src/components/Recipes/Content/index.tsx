@@ -1,35 +1,31 @@
+//@ts-nocheck
 import Background from "@/components/Recipes/Content/Background";
-import CreationTime from "@/components/Recipes/Content/CreationTime";
-import Ingredients from "@/components/Recipes/Content/Ingredients";
-import Instructions from "@/components/Recipes/Content/Instructions";
 import Share from "@/components/Share";
-import { Database } from "@/lib/db";
-import {
-	CameraIcon,
-	DevicePhoneMobileIcon,
-	EnvelopeIcon,
-} from "@heroicons/react/24/outline";
+import { getRecipeById } from "@/lib/db";
+import { ArrowLeftIcon, CameraIcon, DevicePhoneMobileIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link';
+import CreationTime from "./CreationTime";
+import Ingredients from "./Ingredients";
+import Instructions from "./Instructions";
 
-export default function Content({
-	meal,
-	title,
-	image,
-	summary,
-	ingredients,
-	creation_time,
-	instructions,
-}: Database["recipe"] & Database["recipe_translation"]) {
+export default async function RecipeContent({ id }: {
+	id: string
+}) {
+	const { title, summary, ingredients, creation_time, instructions, image, meal } = await getRecipeById(Number(id), "en");
+
 	return (
-		<div className="overflow-hidden relative py-32 px-6 bg-white lg:overflow-visible lg:px-0 isolate">
+		<div className="overflow-hidden relative py-32 px-6 bg-white w-screen lg:overflow-visible lg:px-0 isolate min-h-screen">
 			<Background />
 			<div className="grid grid-cols-1 gap-x-8 gap-y-16 mx-auto max-w-2xl lg:grid-cols-2 lg:gap-y-10 lg:items-start lg:mx-0 lg:max-w-none animate-slideLeft">
 				<div className="lg:grid lg:grid-cols-2 lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:gap-x-8 lg:px-8 lg:mx-auto lg:w-full lg:max-w-7xl">
 					<div className="lg:pr-4">
 						<div className="lg:max-w-lg">
-							<div className="flex items-center space-x-3 text-3xl font-bold tracking-tight sm:text-4xl">
-								<h1 className="m-0">{title}</h1>
+							<div className="flex items-start space-x-3 font-bold tracking-tight relative -ml-12 max-w-lg">
+								<Link href="/#recipes">
+									<ArrowLeftIcon className="w-8 h-8" />
+								</Link>
+								<h1 className="text-6xl m-0">{title}</h1>
 								<Share
 									options={[
 										{
@@ -51,8 +47,8 @@ export default function Content({
 							<Ingredients ingredients={ingredients} />
 							<CreationTime time={creation_time} />
 						</div>
+						<Instructions instructions={instructions} />
 					</div>
-					<Instructions instructions={instructions} />
 				</div>
 				<div className="p-12 -mt-12 -ml-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 animate-slideRight">
 					<Image
@@ -63,7 +59,7 @@ export default function Content({
 						height={672}
 						priority
 						placeholder="blur"
-						blurDataURL="https://placehold.co/1024x662"
+						blurDataURL="https://placehold.co/1024x672"
 					/>
 					<Link
 						className="flex items-center w-64 text-xs font-extralight no-underline"
@@ -74,9 +70,6 @@ export default function Content({
 						{image.photographer?.name || "DALL-E 2"}
 					</Link>
 				</div>
-				<Link href="/recipes" className="mx-auto no-underline button primary">
-					Back to recipes
-				</Link>
 			</div>
 		</div>
 	);

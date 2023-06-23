@@ -1,7 +1,7 @@
-export default function RecipePage() {
+import RecipeContent from "@/components/Recipes/Content";
+
+export default function RecipePage({ params }: { params: { id: string } }) {
   return (
-    <div>
-      <h1>Recipe Page</h1>
-    </div>
+    <RecipeContent id={params.id}/>
   )
 }

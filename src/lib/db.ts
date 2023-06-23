@@ -119,7 +119,7 @@ const getRecipeById = (id: number, locale: string) =>
 			"recipe.id",
 		)
 		.select([
-			"id",
+			"recipe.id",
 			"recipe_translation.meal as meal",
 			"recipe_translation.title as title",
 			"recipe_translation.summary as summary",

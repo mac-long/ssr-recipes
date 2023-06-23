@@ -4,7 +4,7 @@ import {
 	ClipboardIcon,
 	ShareIcon,
 } from "@heroicons/react/24/outline";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { MouseEvent, useEffect, useRef, useState } from "react";
 
 interface Props {
@@ -21,7 +21,7 @@ interface Props {
 export default function Share({ options, seperators }: Props) {
 	const [open, setOpen] = useState(false);
 	const [copied, setCopied] = useState(false);
-	const router = useRouter();
+	// const router = useRouter();
 	const menuRef = useRef<HTMLDivElement>(null);
 	const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -42,7 +42,7 @@ export default function Share({ options, seperators }: Props) {
 	}, []);
 
 	const triggerCopy = (e: MouseEvent<HTMLElement>) => {
-		navigator.clipboard.writeText(router.asPath);
+		// navigator.clipboard.writeText(router.asPath);
 		setCopied(true);
 		setTimeout(() => setCopied(false), 2000);
 	};

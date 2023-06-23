@@ -17,7 +17,7 @@ export default function RootLayout({
 		<html lang="en">
 			<Script src="http://localhost:8097" />
 			<body className="scroll-smooth">
-				<main className="mx-auto min-h-screen prose">{children}</main>
+				<main>{children}</main>
 				<Footer />
 			</body>
 			<Analytics />
