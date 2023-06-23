@@ -26,6 +26,7 @@ export default async function RecipeContent({ id }: {
 									<ArrowLeftIcon className="w-8 h-8" />
 								</Link>
 								<h1 className="text-6xl m-0">{title}</h1>
+								<div className="flex-1 flex-grow"/>
 								<Share
 									options={[
 										{
