@@ -22,7 +22,7 @@ export default async function RecipeContent({ id }: {
 					<div className="lg:pr-4">
 						<div className="lg:max-w-lg">
 							<div className="flex items-start space-x-3 font-bold tracking-tight relative -ml-12 max-w-lg">
-								<Link href="/#recipes">
+								<Link href="/#recipes" aria-label="Back to all recipes">
 									<ArrowLeftIcon className="w-8 h-8" />
 								</Link>
 								<h1 className="text-6xl m-0">{title}</h1>

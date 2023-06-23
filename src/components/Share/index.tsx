@@ -53,6 +53,7 @@ export default function Share({ options, seperators }: Props) {
 				type="button"
 				onClick={() => setOpen(!open)}
 				className="grid place-items-center px-3 text-sm font-semibold text-gray-900 bg-transparent rounded-md ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-gray-300"
+				aria-label="Share"
 				ref={menuButtonRef}
 			>
 				<ShareIcon className="w-5 h-5" />
