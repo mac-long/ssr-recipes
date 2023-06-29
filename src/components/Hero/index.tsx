@@ -16,7 +16,7 @@ export default function Hero({ title, description, buttons }: Props) {
 			<HeroGradient />
 			<div className="mx-auto sm:py-48 lg:py-56 sm:max-w-lg">
 				<div className="text-center">
-					<h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-tr from-teal-500 py-4 to-blue-500 leading-10 sm:leading-[5rem]">
+					<h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-tr from-teal-500 py-4 to-blue-500 leading-12 sm:leading-[5rem]">
 						{title}
 					</h1>
 					<p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400">

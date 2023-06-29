@@ -3,6 +3,7 @@ import { createKysely } from "@vercel/postgres-kysely";
 import { Generated } from "kysely";
 
 export {
+	checkForRecipient,
 	deleteEmailRecipient,
 	getAllEmailRecipients,
 	getAllRecipes,
@@ -12,7 +13,8 @@ export {
 	getRecipeFilters,
 	getRecipesByMeal,
 	newEmailRecipient,
-	newRecipe
+	newRecipe,
+	verifyEmailRecipient,
 };
 
 interface RecipientTable {
@@ -191,14 +193,37 @@ const newEmailRecipient = async (
 	recipient: Omit<RecipientTable, "id" | "created_on" | "email_verified">,
 ) => {
 	try {
-		db.insertInto("recipient").values(recipient).executeTakeFirst();
+		await db
+			.insertInto("recipient")
+			.values({ name: recipient.name, email: recipient.email })
+			.execute();
 	} catch (error) {
 		console.error(error);
 	}
 };
 
+const checkForRecipient = async (email: string) => {
+	try {
+		const existingRecipient = await db
+			.selectFrom("recipient")
+			.select(["email", "email_verified"])
+			.where("email", "=", email)
+			.executeTakeFirst();
+		return existingRecipient;
+	} catch (error) {
+		return null;
+	}
+};
+
 const getAllEmailRecipients = () =>
 	db.selectFrom("recipient").select(["name", "email"]).execute();
+
+const verifyEmailRecipient = (email: string) =>
+	db
+		.updateTable("recipient")
+		.set({ email_verified: true })
+		.where("email", "=", email)
+		.executeTakeFirst();
 
 const deleteEmailRecipient = (id: number) =>
 	db.deleteFrom("recipient").where("id", "=", id);
